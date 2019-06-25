@@ -126,18 +126,47 @@
       <DependentUpon>ModelAdmin.edmx</DependentUpon>
       <LastGenOutput>ModelAdmin.cs</LastGenOutput>
     </Content>
+    <Content Include="Content\css\all.css" />
     <Content Include="Content\css\bootstrap-grid.css" />
     <Content Include="Content\css\bootstrap-grid.min.css" />
     <Content Include="Content\css\bootstrap-reboot.css" />
     <Content Include="Content\css\bootstrap-reboot.min.css" />
     <Content Include="Content\css\bootstrap.css" />
     <Content Include="Content\css\bootstrap.min.css" />
+    <Content Include="Content\css\phoneshop.css" />
     <Content Include="Content\js\bootstrap.bundle.js" />
     <Content Include="Content\js\bootstrap.bundle.min.js" />
     <Content Include="Content\js\bootstrap.js" />
     <Content Include="Content\js\bootstrap.min.js" />
+    <Content Include="Content\js\jquery.min.js" />
+    <Content Include="Content\js\phoneshop.js" />
     <Content Include="Global.asax" />
+    <EntityDeploy Include="Models\PhoneShopModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>PhoneShopModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\PhoneShopModel.edmx.diagram">
+      <DependentUpon>PhoneShopModel.edmx</DependentUpon>
+    </Content>
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
+    <Content Include="images\background\5.jpg" />
+    <Content Include="images\logo.png" />
+    <Content Include="images\main_slider\1.jpg" />
+    <Content Include="images\main_slider\2.jpg" />
+    <Content Include="images\main_slider\3.jpg" />
+    <Content Include="images\resource\1.jpg" />
+    <Content Include="images\resource\2.jpg" />
+    <Content Include="images\resource\3.jpg" />
+    <Content Include="Models\PhoneShopModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>PhoneShopModel.edmx</DependentUpon>
+      <LastGenOutput>PhoneShopModel.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\PhoneShopModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>PhoneShopModel.edmx</DependentUpon>
+      <LastGenOutput>PhoneShopModel.cs</LastGenOutput>
+    </Content>
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
     <None Include="Scripts\jquery.validate-vsdoc.js" />
@@ -190,8 +219,49 @@
     <Compile Include="Areas\Admin\Models\TaiKhoan.cs">
       <DependentUpon>ModelAdmin.tt</DependentUpon>
     </Compile>
+    <Compile Include="Controllers\HomePageController.cs" />
+    <Compile Include="Controllers\SanPhamKHsController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Models\CTHoaDonKH.cs">
+      <DependentUpon>PhoneShopModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\HoaDonKH.cs">
+      <DependentUpon>PhoneShopModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\HoiÐapKH.cs">
+      <DependentUpon>PhoneShopModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\LoaiTaiKhoanKH.cs">
+      <DependentUpon>PhoneShopModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\MauSacKH.cs">
+      <DependentUpon>PhoneShopModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\NhaSanXuatKH.cs">
+      <DependentUpon>PhoneShopModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\PhoneShopModel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PhoneShopModel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\PhoneShopModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PhoneShopModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\PhoneShopModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PhoneShopModel.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\SanPhamKH.cs">
+      <DependentUpon>PhoneShopModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\TaiKhoanKH.cs">
+      <DependentUpon>PhoneShopModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -224,6 +294,13 @@
     <Content Include="Areas\Admin\Views\SanPhams\Edit.cshtml" />
     <Content Include="Areas\Admin\Views\SanPhams\Index.cshtml" />
     <Content Include="Scripts\jquery-1.10.2.min.map" />
+    <Content Include="Views\HomePage\HomePage.cshtml" />
+    <Content Include="Views\Shared\LayoutPage.cshtml" />
+    <Content Include="Views\SanPhamKHs\Create.cshtml" />
+    <Content Include="Views\SanPhamKHs\Delete.cshtml" />
+    <Content Include="Views\SanPhamKHs\Details.cshtml" />
+    <Content Include="Views\SanPhamKHs\Edit.cshtml" />
+    <Content Include="Views\SanPhamKHs\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -231,10 +308,7 @@
       <DependentUpon>Web.config</DependentUpon>
     </None>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Controllers\" />
-    <Folder Include="Models\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>

@@ -1,0 +1,46 @@
+﻿@model IEnumerable<ShopOnline.Models.SanPhamKH>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/LayoutPage.cshtml";
+}
+<div id="dssanpham">
+    <div class="container-fluid" id="path">
+        <div class="container">
+            <ul>
+                <li>@Html.ActionLink("Home", "HomePage", "HomePage", null) <i class="fas fa-angle-right"></i></></li>
+                <li>@Html.ActionLink("Sản phẩm", "Index", "SanPhamKH", null)
+            </ul>
+
+        </div>
+    </div>
+    <div class="container">
+        <div class="row">
+            <section class="col-md-3">
+                <div id="search-area">
+                    @using (Html.BeginForm("Search", "SanPhamKH", null, FormMethod.Post))
+                    {
+                        <input type="text" placeholder="Search..." name="tensp">
+                        <button type="submit" id="btn-search">
+                            <i class="fas fa-search"></i>
+                        </button>
+                    }
+                    
+                </div>
+                <div id="categories">
+                    <ul class="item-holder categories-menu">
+                        <li>@Html.ActionLink("Điện thoại", "", "SanPhamKH", null)<i class="fas fa-mobile-alt"></i></li>
+                        <li>@Html.ActionLink("Laptop", "", "SanPhamKH", null)<i class="fas fa-tablet-alt"></i></li>
+                        <li>@Html.ActionLink("Tablet", "", "SanPhamKH", null)<i class="fas fa-laptop"></i></li>
+                    </ul>
+                </div>
+            </section>
+            <section class="col-md-9">
+
+            </section>
+        </div>
+    </div>
+
+</div>
+
+

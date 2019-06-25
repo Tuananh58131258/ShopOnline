@@ -1,0 +1,102 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>CNTT shop</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+
+    <link rel="stylesheet" href="~/Content/css/all.css">
+    <script type="text/javascript" src="~/Content/js/phoneshop.js"></script>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="~/Content/css/phoneshop.css">
+    <link rel="stylesheet" type="text/css" href="~/Content/css/bootstrap.min.css">
+    <script src="~/Content/js/jquery.min.js"></script>
+    <script src="~/Content/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+    <section class="header-top">
+        <div class="container">
+            <div class="row">
+                <div class="main-logo">
+                    <figure>
+                        <a href="fixera.html"><img src="~/images/logo.png" alt=""></a>
+                    </figure>
+                </div>
+
+                <ul class="header-info">
+                    <li class="item">
+                        <i class="far fa-clock"></i>
+                        <h6>Opening Time</h6>
+                        <span>Allday 9.00 - 18.00</span>
+                    </li>
+                    <li class="item">
+                        <i class="far fa-envelope"></i>
+                        <h6>Email Us</h6>
+                        <a href="http://nasim.hostlin.com/Fixera/index.html#"><span>info@example.com</span></a>
+                    </li>
+                    <li class="item">
+                        <i class="fas fa-phone fa-rotate-90"></i>
+                        <h6>Call Us Now</h6>
+                        <span class="phone-number">+123-456-789</span>
+                    </li>
+
+                </ul>
+            </div>
+        </div>
+    </section>
+    <header class="sticky-top container-fluid">
+        <div class="container">
+            <nav class="navbar navbar-expand-lg navbar-dark " id="main_menu">
+                <span role="button" class="btn btn-light fas navbar-toggler-icon float-left navbar-toggler " data-toggle="collapse" data-target="#collapseMenu" aria-controls="collapseSubMenu" aria-expanded="false" aria-label="Toggle navigation">
+
+                </span>
+                <span class="fab fa-blogger navbar-brand text-warning "></span>
+
+                <div class="collapse navbar-collapse" id="collapseMenu">
+
+                    <ul class="navbar-nav mr-auto">
+                        <li class="nav-item"><a href="blog_NguyenDucThai.html" class="nav-link active text-warning">Trang chủ</a></li>
+                        <li class="nav-item dropdown">
+                            <a href="#" class="nav-link dropdown-toggle text-white" data-toggle="dropdown">Danh sách <i class="fas fa-list-ul"></i></a>
+                            <ul class="dropdown-menu bg-dark">
+                                <li class="dropdown-item">@Html.ActionLink("Sản phẩm","Index","SanPhamKH",null)</li>
+
+                                <li class="dropdown-item"><a class="nav-link" href="#">Khách hàng</a></li>
+
+                            </ul>
+                        </li>
+                        <li class="nav-item dropdown"><a href="#" class="nav-link text-white">Phone <i class="fas fa-mobile-alt"></i></a></li>
+                        <li class="nav-item dropdown"><a href="#" class="nav-link text-white">Tablet <i class="fas fa-tablet-alt"></i></a></li>
+                        <li class="nav-item dropdown"><a href="#" class="nav-link text-white">Laptop <i class="fas fa-laptop"></i></a></li>
+                        <li class="nav-item dropdown"><a href="#" class="nav-link text-white">Khuyến mãi hot <i class="fas fa-fire"></i></a></li>
+
+                        <li class="nav-item"><a href="write_post.html" class="nav-link text-white">Liên hệ </a></li>
+                    </ul>
+
+
+                    <form class="form-inline navbar-right" id="navbar-right">
+                        <a href="https://www.facebook.com"><span class="fab fa-facebook-f mx-2 text-white">  </span></a>
+                        <a href="https://twitter.com/twister"><span class="fab fa-twitter mx-2 text-white">  </span></a>
+                        <a href="https://www.instagram.com/"><span class="fab fa-instagram mx-2 text-white"></span></a>
+                        <a href="https://www.tumblr.com/"><span class="fab fa-tumblr mx-2 text-white"></span></a>
+                        <a href="https://www.youtube.com/?gl=VN"><span class="fab fa-youtube mx-2 text-white"></span></a>
+
+
+                        <span class="fas fa-user text-white mx-2"></span><a href="#"><span class="text-white">Đăng kí</span></a>
+                        <span class="fas fa-sign-in-alt text-white mx-2"></span><a href=""><span class="text-white">Đăng nhập</span></a>
+                    </form>
+                </div>
+            </nav>
+        </div>
+    </header>
+    @RenderBody()
+    <footer>
+        <div class="container-fluid">
+            <div class="container">
+                <p><span>58CNTT</span>© 2018 All Right Reserved</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
