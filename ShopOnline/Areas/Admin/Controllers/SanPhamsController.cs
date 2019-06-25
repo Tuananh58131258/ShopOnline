@@ -15,9 +15,12 @@ namespace ShopOnline.Areas.Admin.Controllers
         private DoAnWebEntities db = new DoAnWebEntities();
 
         // GET: Admin/SanPhams
-        public ActionResult Index()
+        [HttpGet]
+        public ActionResult Index(string SP)
         {
-            var sanPhams = db.SanPhams.Include(s => s.NhaSanXuat);
+            ViewBag.SP = SP;
+            //var sanPhams = db.SanPhams.Include(s => s.NhaSanXuat);
+            var sanPhams = db.SanPhams.SqlQuery("Select * from SanPham where MaSP like '" + SP + "%'");
             return View(sanPhams.ToList());
         }
 

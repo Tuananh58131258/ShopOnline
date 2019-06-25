@@ -3,6 +3,7 @@
 @{
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/AdminLayout.cshtml";
+    var grid = new WebGrid(Model, canPage: true, rowsPerPage: 10);
 }
 
 <h2>Index</h2>
@@ -10,109 +11,29 @@
 <p>
     @Html.ActionLink("Create New", "Create")
 </p>
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.TenSP)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.HinhAnh)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.ManHinh)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.DonGia)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.HDH)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.CPU)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.GPU)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Ram)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Pin)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Camera)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.BoNhoTrong)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.MoTa)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.KhuyenMai)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.SoLuong)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.NhaSanXuat.TenNSX)
-        </th>
-        <th></th>
-    </tr>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.TenSP)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.HinhAnh)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.ManHinh)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.DonGia)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.HDH)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.CPU)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.GPU)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Ram)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Pin)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Camera)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.BoNhoTrong)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.MoTa)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.KhuyenMai)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.SoLuong)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.NhaSanXuat.TenNSX)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.MaSP }) |
-            @Html.ActionLink("Details", "Details", new { id=item.MaSP }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.MaSP })
-        </td>
-    </tr>
+@using (Html.BeginForm("Index", "SanPhams", FormMethod.Get))
+{
+    @Html.AntiForgeryToken()
+    <button type="submit" value="DT" name="SP">Điện thoại</button>
+    <button type="submit" value="LT" name="SP">Điện thoại</button>
+    <button type="submit" value="DT" name="SP">Điện thoại</button>
 }
-
-</table>
+<div id="gridContent">
+    @grid.GetHtml(
+            tableStyle: "table table-bordered table-hover",
+            footerStyle: "grid-footer",
+            fillEmptyRows: true,
+            mode: WebGridPagerModes.Numeric,
+            alternatingRowStyle: "alternatingRowStyle",
+              columns: new[]  // colums in grid
+             {
+         grid.Column("STT",format: item => item.WebGrid.Rows.IndexOf(item) + 1 + Math.Round(Convert.ToDouble(grid.TotalRowCount / grid.PageCount) / grid.RowsPerPage) * grid.RowsPerPage * grid.PageIndex),
+        grid.Column("TenSP","Tên sản phẩm"), //the model fields to display
+        grid.Column("DonGia","Giá"  ),
+        grid.Column(format: (item) => Html.ActionLink("Cập nhật", "Edit", "SanPhams",new { id = item.MaSP },"s")),
+        grid.Column(format: (item) => Html.ActionLink("Xem chi tiết", "Details","SanPhams", new { id = item.MaSP },"s")),
+        grid.Column(format: (item) => Html.ActionLink("Xóa", "Delete","SanPhams", new { id = item.MaSP },"s")),
+         }
+         )
+</div>
