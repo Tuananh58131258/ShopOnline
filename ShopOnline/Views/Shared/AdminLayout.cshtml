@@ -4,8 +4,12 @@
 <head>
     <meta name="viewport" content="width=device-width" />
     <title>@ViewBag.Title</title>
-    @System.Web.Optimization.Scripts.Render("~/bundle/js")
+    <link href="~/Content/fontawesome/css/all.css" rel="stylesheet"> 
     @System.Web.Optimization.Styles.Render("~/Content/css/bootstrap.min.css")
+    @System.Web.Optimization.Styles.Render("~/Content/fontawesome/css/fontawesome.min.css")
+    @System.Web.Optimization.Styles.Render("~/Content/fontawesome/css/fontawesome.css")
+    @System.Web.Optimization.Styles.Render("~/Content/fontawesome/css/all.css")
+    @System.Web.Optimization.Styles.Render("~/Content/font-awesome.min.css")
 </head>
 <body style="margin:0;padding:0;">
     <header>
@@ -46,13 +50,10 @@
         </nav>
     </header>
     <div class="row">
-        <div class="col-md-2">
-            Menu ngang
-        </div>
         <div class="col-md-10">
             <div class="row">
                 <div class="col-md-3">
-                    a
+                    <i class="fa fa-twitter"></i>
                 </div>
                 <div class="col-md-3">
                     b
