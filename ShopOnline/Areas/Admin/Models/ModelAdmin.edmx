@@ -94,8 +94,8 @@
           <Property Name="MatKhau" Type="varchar" MaxLength="30" />
           <Property Name="HoTen" Type="nvarchar" MaxLength="50" />
           <Property Name="DiaChi" Type="nvarchar" MaxLength="100" />
-          <Property Name="SDT" Type="int" />
-          <Property Name="GioiTinh" Type="nvarchar" MaxLength="10" />
+          <Property Name="SDT" Type="varchar" MaxLength="50" />
+          <Property Name="GioiTinh" Type="bit" />
         </EntityType>
         <Association Name="FK_CTHOADON_ASSOCIATI_HOAÐON">
           <End Role="HoaDon" Type="Self.HoaDon" Multiplicity="1" />
@@ -333,8 +333,8 @@
           <Property Name="MatKhau" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
           <Property Name="HoTen" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="DiaChi" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
-          <Property Name="SDT" Type="Int32" />
-          <Property Name="GioiTinh" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="SDT" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="GioiTinh" Type="Boolean" />
           <NavigationProperty Name="HoaDons" Relationship="Self.FK_HOAÐON_ASSOCIATI_TAIKHOAN" FromRole="TaiKhoan" ToRole="HoaDon" />
           <NavigationProperty Name="HoiÐap" Relationship="Self.FK_HOIÐAP_ASSOCIATI_TAIKHOAN" FromRole="TaiKhoan" ToRole="HoiÐap" />
           <NavigationProperty Name="LoaiTaiKhoan" Relationship="Self.FK_TAIKHOAN_ASSOCIATI_LOAITAIK" FromRole="TaiKhoan" ToRole="LoaiTaiKhoan" />

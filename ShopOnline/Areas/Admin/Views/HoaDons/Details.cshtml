@@ -1,0 +1,56 @@
+﻿@model ShopOnline.Areas.Admin.Models.HoaDon
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+    int i = 0;
+    long tien = 0,tongtien = 0;
+    @System.Web.Optimization.Styles.Render("~/Content/admincss/HoaDon.css")
+}
+<div id="page" class="page">
+    <div class="header">
+        <div class="shop">Đức Thái Store</div>
+    </div>
+    <br />
+    <div class="title">
+        HÓA ĐƠN THANH TOÁN
+        <br />
+        ----------oOo----------
+    </div>
+    <br />
+    <br />
+    <div class="info">
+        <label>Tên khách hàng</label> @Model.TaiKhoan.HoTen
+        <br />
+        <label>Ngày mua</label> @Model.NgayLap
+    </div>
+    <table class="TableData">
+        <tr>
+            <th>STT</th>
+            <th>Tên</th>
+            <th>Đơn giá</th>
+            <th>Số</th>
+            <th>Thành tiền</th>
+        </tr>
+        @foreach (var item in Model.CTHoaDons)
+        {
+            i = i + 1;
+            if (item.MaHoaDon == Model.MaHoaDon)
+            {
+                tien = (long)item.SoLuong * (long)item.SanPham.DonGia;
+                tongtien += tien;
+                <tr>
+                    <td>@i</td>
+                    <td>@item.SanPham.TenSP</td>
+                    <td>@item.SanPham.DonGia</td>
+                    <td class="cotSoLuong">@item.SoLuong</td>
+                    <td class="cotSo">@tien</td>
+                </tr>
+            }
+        }
+        <tr>
+            <td colspan="4" class="tong">Tổng cộng</td>
+            <td class="cotSo">@tongtien</td>
+        </tr>
+    </table>
+</div>

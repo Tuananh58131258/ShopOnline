@@ -118,14 +118,15 @@
   <ItemGroup>
     <Content Include="Areas\Admin\Models\ModelAdmin.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>ModelAdmin.Context.cs</LastGenOutput>
       <DependentUpon>ModelAdmin.edmx</DependentUpon>
+      <LastGenOutput>ModelAdmin.Context.cs</LastGenOutput>
     </Content>
     <Content Include="Areas\Admin\Models\ModelAdmin.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>ModelAdmin.edmx</DependentUpon>
       <LastGenOutput>ModelAdmin.cs</LastGenOutput>
     </Content>
+    <Content Include="Content\admincss\HoaDon.css" />
     <Content Include="Content\css\all.css" />
     <Content Include="Content\css\bootstrap-grid.css" />
     <Content Include="Content\css\bootstrap-grid.min.css" />
@@ -148,6 +149,24 @@
     <Content Include="Models\PhoneShopModel.edmx.diagram">
       <DependentUpon>PhoneShopModel.edmx</DependentUpon>
     </Content>
+    <Content Include="Areas\Admin\Views\HoaDons\Create.cshtml" />
+    <Content Include="Areas\Admin\Views\HoaDons\Delete.cshtml" />
+    <Content Include="Areas\Admin\Views\HoaDons\Details.cshtml" />
+    <Content Include="Areas\Admin\Views\HoaDons\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\HoaDons\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\NhaSanXuats\Create.cshtml" />
+    <Content Include="Areas\Admin\Views\NhaSanXuats\Delete.cshtml" />
+    <Content Include="Areas\Admin\Views\NhaSanXuats\Details.cshtml" />
+    <Content Include="Areas\Admin\Views\NhaSanXuats\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\NhaSanXuats\Index.cshtml" />
+    <EntityDeploy Include="Areas\Admin\Models\ModelAdmin.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>ModelAdmin.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Areas\Admin\Models\ModelAdmin.edmx.diagram">
+      <DependentUpon>ModelAdmin.edmx</DependentUpon>
+    </Content>
+    <Content Include="Areas\Admin\Views\ThongKe\ThongKe.cshtml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="images\background\5.jpg" />
     <Content Include="images\logo.png" />
@@ -179,7 +198,10 @@
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Areas\Admin\AdminAreaRegistration.cs" />
+    <Compile Include="Areas\Admin\Controllers\HoaDonsController.cs" />
+    <Compile Include="Areas\Admin\Controllers\NhaSanXuatsController.cs" />
     <Compile Include="Areas\Admin\Controllers\SanPhamsController.cs" />
+    <Compile Include="Areas\Admin\Controllers\ThongKeController.cs" />
     <Compile Include="Areas\Admin\Models\CTHoaDon.cs">
       <DependentUpon>ModelAdmin.tt</DependentUpon>
     </Compile>
@@ -280,13 +302,6 @@
     <Content Include="Content\js\bootstrap.min.js.map" />
     <Content Include="Areas\Admin\Views\web.config" />
     <Content Include="App_Data\DoAnWeb.bak" />
-    <EntityDeploy Include="Areas\Admin\Models\ModelAdmin.edmx">
-      <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>ModelAdmin.Designer.cs</LastGenOutput>
-    </EntityDeploy>
-    <Content Include="Areas\Admin\Models\ModelAdmin.edmx.diagram">
-      <DependentUpon>ModelAdmin.edmx</DependentUpon>
-    </Content>
     <Content Include="Views\Shared\AdminLayout.cshtml" />
     <Content Include="Areas\Admin\Views\SanPhams\Create.cshtml" />
     <Content Include="Areas\Admin\Views\SanPhams\Delete.cshtml" />
