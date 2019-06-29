@@ -1,58 +1,29 @@
-﻿<div class="container">
-    <div class="wrapper">
-        <!-- Sidebar  -->
-        <nav id="sidebar">
-            <div class="sidebar-header">
-                <h3>Bootstrap Sidebar</h3>
-                <strong>BS</strong>
-            </div>
-
-            <ul class="list-unstyled components">
-                <li class="active">
-                    <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
-                        <i class="fas fa-home"></i>
-                        Sản phẩm
-                    </a>
-                    <ul class="collapse list-unstyled" id="homeSubmenu">
-                        <li>
-                            <a href="@Url.Action("Index","SanPhams", new {Area ="Admin"})">Tất cả</a>
-                        </li>
-                        <li>
-                            <a href="@Url.Action("Index","SanPhams", new {Area ="Admin", SP = "DT"})">Điện thoại</a>
-                        </li>
-                        <li>
-                            <a href="@Url.Action("Index","SanPhams", new {Area ="Admin", SP="LT" })">Laptop</a>
-                        </li>
-                        <li>
-                            <a href="@Url.Action("Index","SanPhams", new {Area="Admin" , SP="TB" })">Tablet</a>
-                        </li>
-                    </ul>
-                </li>
-                <li>
-                    <a href="@Url.Action("Index","HoaDons", new { Area="Admin"})">Hóa đơn</a>
-                </li>
-                <li>
-                    <a href="@Url.Action("Index","NhaSanXuats", new { Area="Admin" })">Nhà sản xuất</a>
-                </li>
-                <li>
-                    <a href="#">
-                        <i class="fas fa-image"></i>
-                        Portfolio
-                    </a>
-                </li>
-                <li>
-                    <a href="#">
-                        <i class="fas fa-question"></i>
-                        FAQ
-                    </a>
-                </li>
-                <li>
-                    <a href="#">
-                        <i class="fas fa-paper-plane"></i>
-                        Contact
-                    </a>
-                </li>
+﻿<div class="mymenu">
+    <ul id="accordion" class="accordion">
+        <li>
+            <a href="#"><div class="link">Trang chủ</div></a>
+        </li>
+        <li>
+            <div class="link">Sản phẩm</div>
+            <ul class="submenu">
+                <li><a href="@Url.Action("Index","SanPhams",new {Area = "Admin" })">Tất cả</a></li>
+                <li><a href="@Url.Action("Index","SanPhams",new {Area = "Admin",LoaiSP = "DT" })">Điện thoại</a></li>
+                <li><a href="@Url.Action("Index","SanPhams",new {Area = "Admin",LoaiSP = "LT" })">Laptop</a></li>
+                <li><a href="@Url.Action("Index","SanPhams",new {Area = "Admin",LoaiSP = "TB" })">Tablet</a></li>
             </ul>
-        </nav>
-    </div>
+        </li>
+        <li>
+            <a href="@Url.Action("Index","HoaDons",new { Area="Admin" })"><div class="link">Hóa đơn</div></a>
+        </li>
+        <li>
+            <a href="@Url.Action("Index","NhaSanXuats",new {Area = "Admin" })">
+                <div class="link">Nhà sản xuất</div>
+            </a>
+        </li>
+        <li>
+            <a href="@Url.Action("Index","TaiKhoans",new {Area = "Admin" })">
+                <div class="link">Khách hàng</div>
+            </a>
+        </li>
+    </ul>
 </div>

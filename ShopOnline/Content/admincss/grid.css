@@ -1,0 +1,6 @@
+﻿#grid{
+    box-sizing:border-box;
+    margin:auto;
+    width: 75%;
+    border:1px solid;
+}

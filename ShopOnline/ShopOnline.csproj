@@ -126,7 +126,12 @@
       <DependentUpon>ModelAdmin.edmx</DependentUpon>
       <LastGenOutput>ModelAdmin.cs</LastGenOutput>
     </Content>
+    <Content Include="Content\admincss\grid.css" />
     <Content Include="Content\admincss\HoaDon.css" />
+    <Content Include="Content\admincss\layout.css" />
+    <Content Include="Content\admincss\Sanpham.css" />
+    <Content Include="Content\admincss\Submenu.css" />
+    <Content Include="Content\adminjs\submenu.js" />
     <Content Include="Content\css\all.css" />
     <Content Include="Content\css\bootstrap-grid.css" />
     <Content Include="Content\css\bootstrap-grid.min.css" />
@@ -139,6 +144,7 @@
     <Content Include="Content\js\bootstrap.bundle.min.js" />
     <Content Include="Content\js\bootstrap.js" />
     <Content Include="Content\js\bootstrap.min.js" />
+    <Content Include="Content\js\jquery.js" />
     <Content Include="Content\js\jquery.min.js" />
     <Content Include="Content\js\phoneshop.js" />
     <Content Include="Global.asax" />
@@ -146,6 +152,99 @@
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>PhoneShopModel.Designer.cs</LastGenOutput>
     </EntityDeploy>
+    <Content Include="images\SanPham\mhdt001.png" />
+    <Content Include="images\SanPham\mhdt002.png" />
+    <Content Include="images\SanPham\mhdt003.png" />
+    <Content Include="images\SanPham\mhdt004.png" />
+    <Content Include="images\SanPham\mhdt005.png" />
+    <Content Include="images\SanPham\mhdt006.png" />
+    <Content Include="images\SanPham\mhdt007.png" />
+    <Content Include="images\SanPham\mhdt008.png" />
+    <Content Include="images\SanPham\mhdt009.png" />
+    <Content Include="images\SanPham\mhdt010.png" />
+    <Content Include="images\SanPham\mhdt011.png" />
+    <Content Include="images\SanPham\mhdt012.png" />
+    <Content Include="images\SanPham\mhdt013.png" />
+    <Content Include="images\SanPham\mhdt014.png" />
+    <Content Include="images\SanPham\mhdt015.png" />
+    <Content Include="images\SanPham\mhdt016.png" />
+    <Content Include="images\SanPham\mhdt017.png" />
+    <Content Include="images\SanPham\mhdt018.png" />
+    <Content Include="images\SanPham\mhdt019.png" />
+    <Content Include="images\SanPham\mhdt020.png" />
+    <Content Include="images\SanPham\mhdt021.png" />
+    <Content Include="images\SanPham\mhdt022.png" />
+    <Content Include="images\SanPham\mhdt023.png" />
+    <Content Include="images\SanPham\mhdt024.png" />
+    <Content Include="images\SanPham\mhdt025.png" />
+    <Content Include="images\SanPham\mhdt026.png" />
+    <Content Include="images\SanPham\mhdt027.png" />
+    <Content Include="images\SanPham\mhdt028.png" />
+    <Content Include="images\SanPham\mhdt029.png" />
+    <Content Include="images\SanPham\mhdt030.png" />
+    <Content Include="images\SanPham\mhdt031.png" />
+    <Content Include="images\SanPham\mhdt032.png" />
+    <Content Include="images\SanPham\mhdt033.png" />
+    <Content Include="images\SanPham\mhdt034.png" />
+    <Content Include="images\SanPham\mhdt035.png" />
+    <Content Include="images\SanPham\mhlt001.png" />
+    <Content Include="images\SanPham\mhlt002.jpg" />
+    <Content Include="images\SanPham\mhlt003.png" />
+    <Content Include="images\SanPham\mhlt004.png" />
+    <Content Include="images\SanPham\mhlt005.png" />
+    <Content Include="images\SanPham\mhlt006.png" />
+    <Content Include="images\SanPham\mhlt007.png" />
+    <Content Include="images\SanPham\mhlt008.jpg" />
+    <Content Include="images\SanPham\mhlt009.png" />
+    <Content Include="images\SanPham\mhlt010.jpg" />
+    <Content Include="images\SanPham\mhlt011.jpg" />
+    <Content Include="images\SanPham\mhlt012.jpg" />
+    <Content Include="images\SanPham\mhlt013.jpg" />
+    <Content Include="images\SanPham\mhlt014.jpg" />
+    <Content Include="images\SanPham\mhlt015.jpg" />
+    <Content Include="images\SanPham\mhlt016.jpg" />
+    <Content Include="images\SanPham\mhlt017.jpg" />
+    <Content Include="images\SanPham\mhlt018.jpg" />
+    <Content Include="images\SanPham\mhlt019.jpg" />
+    <Content Include="images\SanPham\mhlt020.jpg" />
+    <Content Include="images\SanPham\mhlt021.jpg" />
+    <Content Include="images\SanPham\mhlt022.jpg" />
+    <Content Include="images\SanPham\mhlt023.jpg" />
+    <Content Include="images\SanPham\mhlt024.jpg" />
+    <Content Include="images\SanPham\mhlt025.jpg" />
+    <Content Include="images\SanPham\mhlt026.jpg" />
+    <Content Include="images\SanPham\mhlt027.jpg" />
+    <Content Include="images\SanPham\mhlt028.jpg" />
+    <Content Include="images\SanPham\mhlt029.jpg" />
+    <Content Include="images\SanPham\mhlt030.jpg" />
+    <Content Include="images\SanPham\mhtl001.png" />
+    <Content Include="images\SanPham\mhtl002.png" />
+    <Content Include="images\SanPham\mhtl003.jpg" />
+    <Content Include="images\SanPham\mhtl004.jpg" />
+    <Content Include="images\SanPham\mhtl005.png" />
+    <Content Include="images\SanPham\mhtl006.png" />
+    <Content Include="images\SanPham\mhtl007.png" />
+    <Content Include="images\SanPham\mhtl008.png" />
+    <Content Include="images\SanPham\mhtl009.png" />
+    <Content Include="images\SanPham\mhtl010.png" />
+    <Content Include="images\SanPham\mhtl011.png" />
+    <Content Include="images\SanPham\mhtl012.png" />
+    <Content Include="images\SanPham\mhtl013.png" />
+    <Content Include="images\SanPham\mhtl014.png" />
+    <Content Include="images\SanPham\mhtl015.png" />
+    <Content Include="images\SanPham\mhtl016.png" />
+    <Content Include="images\SanPham\mhtl017.png" />
+    <Content Include="images\SanPham\mhtl018.png" />
+    <Content Include="images\SanPham\mhtl019.png" />
+    <Content Include="images\SanPham\mhtl020.png" />
+    <Content Include="images\SanPham\mhtl021.png" />
+    <Content Include="images\SanPham\mhtl022.png" />
+    <Content Include="images\SanPham\mhtl023.png" />
+    <Content Include="images\SanPham\mhtl024.png" />
+    <Content Include="images\SanPham\mhtl025.png" />
+    <Content Include="images\SanPham\mhtl026.png" />
+    <Content Include="images\SanPham\mhtl027.png" />
+    <Content Include="images\SanPham\mhtl028.png" />
     <Content Include="Models\PhoneShopModel.edmx.diagram">
       <DependentUpon>PhoneShopModel.edmx</DependentUpon>
     </Content>
@@ -167,6 +266,12 @@
       <DependentUpon>ModelAdmin.edmx</DependentUpon>
     </Content>
     <Content Include="Areas\Admin\Views\ThongKe\ThongKe.cshtml" />
+    <Content Include="Areas\Admin\Views\TaiKhoans\Create.cshtml" />
+    <Content Include="Areas\Admin\Views\TaiKhoans\Delete.cshtml" />
+    <Content Include="Areas\Admin\Views\TaiKhoans\Details.cshtml" />
+    <Content Include="Areas\Admin\Views\TaiKhoans\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\TaiKhoans\Index.cshtml" />
+    <Content Include="App_Data\DoAnWeb.bak" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="images\background\5.jpg" />
     <Content Include="images\logo.png" />
@@ -193,14 +298,18 @@
     <Content Include="Scripts\jquery.validate.min.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Areas\Admin\AdminAreaRegistration.cs" />
     <Compile Include="Areas\Admin\Controllers\HoaDonsController.cs" />
     <Compile Include="Areas\Admin\Controllers\NhaSanXuatsController.cs" />
     <Compile Include="Areas\Admin\Controllers\SanPhamsController.cs" />
+    <Compile Include="Areas\Admin\Controllers\TaiKhoansController.cs" />
     <Compile Include="Areas\Admin\Controllers\ThongKeController.cs" />
     <Compile Include="Areas\Admin\Models\CTHoaDon.cs">
       <DependentUpon>ModelAdmin.tt</DependentUpon>
@@ -239,6 +348,9 @@
       <DependentUpon>ModelAdmin.tt</DependentUpon>
     </Compile>
     <Compile Include="Areas\Admin\Models\TaiKhoan.cs">
+      <DependentUpon>ModelAdmin.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\Admin\Models\TimKiemSP_Result.cs">
       <DependentUpon>ModelAdmin.tt</DependentUpon>
     </Compile>
     <Compile Include="Controllers\HomePageController.cs" />
@@ -301,7 +413,6 @@
     <Content Include="Content\js\bootstrap.js.map" />
     <Content Include="Content\js\bootstrap.min.js.map" />
     <Content Include="Areas\Admin\Views\web.config" />
-    <Content Include="App_Data\DoAnWeb.bak" />
     <Content Include="Views\Shared\AdminLayout.cshtml" />
     <Content Include="Areas\Admin\Views\SanPhams\Create.cshtml" />
     <Content Include="Areas\Admin\Views\SanPhams\Delete.cshtml" />
@@ -316,6 +427,7 @@
     <Content Include="Views\SanPhamKHs\Details.cshtml" />
     <Content Include="Views\SanPhamKHs\Edit.cshtml" />
     <Content Include="Views\SanPhamKHs\Index.cshtml" />
+    <Content Include="Views\Shared\Submenu.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
