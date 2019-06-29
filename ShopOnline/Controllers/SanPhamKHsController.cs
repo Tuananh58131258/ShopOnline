@@ -7,6 +7,7 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using ShopOnline.Models;
+using PagedList;
 
 namespace ShopOnline.Controllers
 {
@@ -14,10 +15,20 @@ namespace ShopOnline.Controllers
     {
         private DoAnWebEntities2 db = new DoAnWebEntities2();
 
+        public ActionResult DanhSach_DT(int? page)
+        {
+            if (page == null) page = 1;
+            var model = db.SanPham.Where(x => x.MaSP.StartsWith("DT")).OrderBy(x => x.MaSP);
+            int pageSize = 6;
+            int pageNumber = (page ?? 1);
+            
+            return PartialView("DanhSachDT",model.ToPagedList(pageNumber,pageSize));
+        }
         // GET: SanPhamKHs
         public ActionResult Index()
         {
             var sanPham = db.SanPham.Include(s => s.NhaSanXuat);
+           
             return View(sanPham.ToList());
         }
 
@@ -60,7 +71,14 @@ namespace ShopOnline.Controllers
             ViewBag.MaNSX = new SelectList(db.NhaSanXuat, "MaNSX", "TenNSX", sanPhamKH.MaNSX);
             return View(sanPhamKH);
         }
-
+        public List<SanPhamKH> ListPhone( ref int totalRecord,int pageIndex = 1, int pageSize = 2)
+        {
+            //skip: lay tu ban ghi nao
+            //take: lay 2 ban ghi
+            totalRecord = db.SanPham.Where(x => x.MaSP.StartsWith("DT")).Count();
+            var model = db.SanPham.Where(x => x.MaSP.StartsWith("DT")).OrderByDescending(x=>x.MaSP).Skip((pageSize-1)*pageIndex).Take(pageSize).ToList();
+            return model;
+        }
         // GET: SanPhamKHs/Edit/5
         public ActionResult Edit(string id)
         {

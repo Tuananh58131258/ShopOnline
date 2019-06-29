@@ -1,9 +1,13 @@
-﻿@model IEnumerable<ShopOnline.Models.SanPhamKH>
+﻿@model List<ShopOnline.Models.SanPhamKH>
 
 @{
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/LayoutPage.cshtml";
+
+
+
 }
+
 <div id="dssanpham">
     <div class="container-fluid" id="path">
         <div class="container">
@@ -25,18 +29,62 @@
                             <i class="fas fa-search"></i>
                         </button>
                     }
-                    
+
                 </div>
+
                 <div id="categories">
                     <ul class="item-holder categories-menu">
-                        <li>@Html.ActionLink("Điện thoại", "", "SanPhamKH", null)<i class="fas fa-mobile-alt"></i></li>
-                        <li>@Html.ActionLink("Laptop", "", "SanPhamKH", null)<i class="fas fa-tablet-alt"></i></li>
-                        <li>@Html.ActionLink("Tablet", "", "SanPhamKH", null)<i class="fas fa-laptop"></i></li>
+                        <li class="dropdown">
+                            <a class="dropdown-toggle nav-link" href="#" data-toggle="dropdown" aria-haspopup="true">Điện thoại &nbsp;<i class="fas fa-mobile-alt"></i></a>
+                            <ul class="dropdown-menu">
+                                <li class="dropdown-item"><a class="nav-link" href="#">Samsung </a></li>
+                                <li class="dropdown-item"><a class="nav-link" href="#">Apple </a></li>
+                                <li class="dropdown-item"><a class="nav-link" href="#">Oppo </a></li>
+                            </ul>
+                        </li>
+                        <li class="dropdown nav-item">
+                            <a class="dropdown-toggle nav-link" data-toggle="dropdown">Tablet &nbsp;<i class="fas fa-tablet-alt"></i></a>
+                            <ul class="dropdown-menu">
+                                <li class="dropdown-item"><a class="nav-link" href="#">Samsung </a></li>
+                                <li class="dropdown-item"><a class="nav-link" href="#">Apple </a></li>
+                                <li class="dropdown-item"><a class="nav-link" href="#">Oppo </a></li>
+                            </ul>
+                        </li>
+                        <li class="dropdown nav-item">
+                            <a class="dropdown-toggle nav-link" data-toggle="dropdown">Điện thoại &nbsp;<i class="fas fa-laptop"></i></a>
+                            <ul class="dropdown-menu">
+                                <li class="dropdown-item"><a class="nav-link" href="#">Samsung </a></li>
+                                <li class="dropdown-item"><a class="nav-link" href="#">Apple </a></li>
+                                <li class="dropdown-item"><a class="nav-link" href="#">Oppo </a></li>
+                            </ul>
+                        </li>
                     </ul>
                 </div>
-            </section>
-            <section class="col-md-9">
+                <div id="timkiemnc">
+                    @using (Html.BeginForm("TimKiemNC", "SanPhamKH", FormMethod.Post))
+                    {
+                        <h4>Giá</h4>
+                        <p>Chọn khoảng giá</p>
+                        <div class="row" style="margin:15px 15px">
+                            <input type="text" name="giamin" class="col-md-5" /><span>&nbsp; - &nbsp; </span> <input type="text" name="giamax" class="col-md-offset-2 col-md-5" />
+                        </div>
+                        <p>Chọn hệ điều hành</p>
+                        <ul>
+                            <li>
+                                <input type="radio" name="HDH" value="Android" />
+                                <text>Android</text>
+                            </li>
+                            <li>
+                                <input type="radio" name="HDH" value="iOS" />
+                                <text>iOS</text>
+                            </li>
+                        </ul>
 
+                    }
+                </div>
+            </section>
+            <section class="col-md-9" id="list-phone-area">
+                @{Html.RenderAction("DanhSach_DT", "SanPhamKHs", new { page = 1 });}
             </section>
         </div>
     </div>
