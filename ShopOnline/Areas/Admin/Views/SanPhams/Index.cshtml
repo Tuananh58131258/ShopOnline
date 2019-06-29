@@ -52,7 +52,8 @@
         {
     grid.Column("STT",format: item => item.WebGrid.Rows.IndexOf(item) + 1 + Math.Round(Convert.ToDouble(grid.TotalRowCount / grid.PageCount) / grid.RowsPerPage) * grid.RowsPerPage * grid.PageIndex),
 grid.Column("TenSP","Tên sản phẩm"), //the model fields to display
-grid.Column("DonGia","Giá"  ),
+grid.Column("DonGia","Giá",format:@<text> @item.DonGia.ToString("#,##0")</text>),
+grid.Column("HinhAnh","Hình Ảnh"),
 //grid.Column(format: (item) => Html.ActionLink("Cập nhật", "Edit", "SanPhams",new { id = item.MaSP },"s")),
 //grid.Column(format: (item) => Html.ActionLink("Xem chi tiết", "Details","SanPhams", new { id = item.MaSP },"s")),
 //grid.Column(format: (item) => Html.ActionLink("Xóa", "Delete","SanPhams", new { id = item.MaSP },"s")),
