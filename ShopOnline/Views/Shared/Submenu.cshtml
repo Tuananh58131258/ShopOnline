@@ -1,50 +1,29 @@
-﻿@{ 
-    @System.Web.Optimization.Styles.Render("~/Content/css/sidebar.css")
-}
-<div class="container">
-    <div class="wrapper">
-        <!-- Sidebar -->
-        <nav id="sidebar">
-            <ul class="list-unstyled components">
-                <li class="active">
-                    <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Home</a>
-                    <ul class="collapse list-unstyled" id="homeSubmenu" aria-labelledby="collapse">
-                        <li>
-                            <a href="#">Home 1</a>
-                        </li>
-                        <li>
-                            <a href="#">Home 2</a>
-                        </li>
-                        <li>
-                            <a href="#">Home 3</a>
-                        </li>
-                    </ul>
-                </li>
-                <li>
-                    <a href="#">About</a>
-                </li>
-                <li>
-                    <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Pages</a>
-                    <ul class="collapse list-unstyled" id="pageSubmenu">
-                        <li>
-                            <a href="#">Page 1</a>
-                        </li>
-                        <li>
-                            <a href="#">Page 2</a>
-                        </li>
-                        <li>
-                            <a href="#">Page 3</a>
-                        </li>
-                    </ul>
-                </li>
-                <li>
-                    <a href="#">Portfolio</a>
-                </li>
-                <li>
-                    <a href="#">Contact</a>
-                </li>
+﻿<div class="mymenu">
+    <ul id="accordion" class="accordion">
+        <li>
+            <a href="#"><div class="link">Trang chủ</div></a>
+        </li>
+        <li>
+            <div class="link">Sản phẩm</div>
+            <ul class="submenu">
+                <li><a href="@Url.Action("Index","SanPhams",new {Area = "Admin" })">Tất cả</a></li>
+                <li><a href="@Url.Action("Index","SanPhams",new {Area = "Admin",LoaiSP = "DT" })">Điện thoại</a></li>
+                <li><a href="@Url.Action("Index","SanPhams",new {Area = "Admin",LoaiSP = "LT" })">Laptop</a></li>
+                <li><a href="@Url.Action("Index","SanPhams",new {Area = "Admin",LoaiSP = "TB" })">Tablet</a></li>
             </ul>
-        </nav>
-    </div>
+        </li>
+        <li>
+            <a href="@Url.Action("Index","HoaDons",new { Area="Admin" })"><div class="link">Hóa đơn</div></a>
+        </li>
+        <li>
+            <a href="@Url.Action("Index","NhaSanXuats",new {Area = "Admin" })">
+                <div class="link">Nhà sản xuất</div>
+            </a>
+        </li>
+        <li>
+            <a href="@Url.Action("Index","TaiKhoans",new {Area = "Admin" })">
+                <div class="link">Khách hàng</div>
+            </a>
+        </li>
+    </ul>
 </div>
-

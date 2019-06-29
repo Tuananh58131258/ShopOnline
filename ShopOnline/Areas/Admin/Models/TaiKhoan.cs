@@ -27,8 +27,8 @@ namespace ShopOnline.Areas.Admin.Models
         public string MatKhau { get; set; }
         public string HoTen { get; set; }
         public string DiaChi { get; set; }
-        public Nullable<int> SDT { get; set; }
-        public string GioiTinh { get; set; }
+        public string SDT { get; set; }
+        public Nullable<bool> GioiTinh { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<HoaDon> HoaDons { get; set; }

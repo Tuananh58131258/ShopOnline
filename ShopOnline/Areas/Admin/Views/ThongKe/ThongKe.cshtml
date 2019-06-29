@@ -1,0 +1,37 @@
+﻿ @model ShopOnline.Areas.Admin.Models.HoaDon
+ @{
+    ViewBag.Title = "ThongKe";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+    int stt = 0;
+    long tien = 0, tongtien = 0;
+}
+
+<h2>ThongKe</h2>
+<table style="border:1px solid;">
+    <tr>
+        <th>STT</th>
+        <th>Mã HĐ</th>
+        <th>Ngày lập</th>
+        <th>Tiền thanh toán</th>
+    </tr>
+    @foreach (var item in Model.CTHoaDons)
+    {
+        stt += 1;
+        if (Model.MaHoaDon == item.MaHoaDon)
+        {
+            tien = (long)(item.DonGia * item.SoLuong);
+            tongtien += tien;
+                <tr>
+                    <td>@stt</td>
+                    <td>@item.MaHoaDon</td>
+                    <td>@Model.NgayLap</td>
+                    <td>@tien</td>
+                </tr>
+            }
+        }
+    }
+    <tr>
+        <td colspan="4" class="tong">Tổng cộng</td>
+        <td class="cotSo">@tongtien</td>
+    </tr>
+</table>

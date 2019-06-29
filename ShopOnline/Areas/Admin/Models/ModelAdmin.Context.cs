@@ -12,6 +12,8 @@ namespace ShopOnline.Areas.Admin.Models
     using System;
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
+    using System.Data.Entity.Core.Objects;
+    using System.Linq;
     
     public partial class DoAnWebEntities : DbContext
     {
@@ -33,5 +35,30 @@ namespace ShopOnline.Areas.Admin.Models
         public virtual DbSet<NhaSanXuat> NhaSanXuats { get; set; }
         public virtual DbSet<SanPham> SanPhams { get; set; }
         public virtual DbSet<TaiKhoan> TaiKhoans { get; set; }
+    
+        public virtual ObjectResult<TimKiemSP_Result> TimKiemSP(string loaiSP, string tenSP, string nSX, Nullable<int> giaMin, Nullable<int> giaMax)
+        {
+            var loaiSPParameter = loaiSP != null ?
+                new ObjectParameter("LoaiSP", loaiSP) :
+                new ObjectParameter("LoaiSP", typeof(string));
+    
+            var tenSPParameter = tenSP != null ?
+                new ObjectParameter("TenSP", tenSP) :
+                new ObjectParameter("TenSP", typeof(string));
+    
+            var nSXParameter = nSX != null ?
+                new ObjectParameter("NSX", nSX) :
+                new ObjectParameter("NSX", typeof(string));
+    
+            var giaMinParameter = giaMin.HasValue ?
+                new ObjectParameter("GiaMin", giaMin) :
+                new ObjectParameter("GiaMin", typeof(int));
+    
+            var giaMaxParameter = giaMax.HasValue ?
+                new ObjectParameter("GiaMax", giaMax) :
+                new ObjectParameter("GiaMax", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<TimKiemSP_Result>("TimKiemSP", loaiSPParameter, tenSPParameter, nSXParameter, giaMinParameter, giaMaxParameter);
+        }
     }
 }

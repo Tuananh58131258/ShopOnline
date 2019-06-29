@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="DoAnWebModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="DoAnWebModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="CTHoaDon">
           <Key>
             <PropertyRef Name="MaHoaDon" />
@@ -94,8 +94,8 @@
           <Property Name="MatKhau" Type="varchar" MaxLength="30" />
           <Property Name="HoTen" Type="nvarchar" MaxLength="50" />
           <Property Name="DiaChi" Type="nvarchar" MaxLength="100" />
-          <Property Name="SDT" Type="int" />
-          <Property Name="GioiTinh" Type="nvarchar" MaxLength="10" />
+          <Property Name="SDT" Type="varchar" MaxLength="50" />
+          <Property Name="GioiTinh" Type="bit" />
         </EntityType>
         <Association Name="FK_CTHOADON_ASSOCIATI_HOAÐON">
           <End Role="HoaDon" Type="Self.HoaDon" Multiplicity="1" />
@@ -193,6 +193,13 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Function Name="TimKiemSP" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="LoaiSP" Type="varchar" Mode="In" />
+          <Parameter Name="TenSP" Type="nvarchar" Mode="In" />
+          <Parameter Name="NSX" Type="varchar" Mode="In" />
+          <Parameter Name="GiaMin" Type="int" Mode="In" />
+          <Parameter Name="GiaMax" Type="int" Mode="In" />
+        </Function>
         <EntityContainer Name="DoAnWebModelStoreContainer">
           <EntitySet Name="CTHoaDon" EntityType="Self.CTHoaDon" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="HoaDon" EntityType="Self.HoaDon" Schema="dbo" store:Type="Tables" />
@@ -236,8 +243,7 @@
             <End Role="TaiKhoan" EntitySet="TaiKhoan" />
           </AssociationSet>
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="DoAnWebModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -333,8 +339,8 @@
           <Property Name="MatKhau" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
           <Property Name="HoTen" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="DiaChi" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
-          <Property Name="SDT" Type="Int32" />
-          <Property Name="GioiTinh" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="SDT" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="GioiTinh" Type="Boolean" />
           <NavigationProperty Name="HoaDons" Relationship="Self.FK_HOAÐON_ASSOCIATI_TAIKHOAN" FromRole="TaiKhoan" ToRole="HoaDon" />
           <NavigationProperty Name="HoiÐap" Relationship="Self.FK_HOIÐAP_ASSOCIATI_TAIKHOAN" FromRole="TaiKhoan" ToRole="HoiÐap" />
           <NavigationProperty Name="LoaiTaiKhoan" Relationship="Self.FK_TAIKHOAN_ASSOCIATI_LOAITAIK" FromRole="TaiKhoan" ToRole="LoaiTaiKhoan" />
@@ -452,7 +458,34 @@
             <End Role="MauSac" EntitySet="MauSacs" />
             <End Role="SanPham" EntitySet="SanPhams" />
           </AssociationSet>
+          <FunctionImport Name="TimKiemSP" ReturnType="Collection(DoAnWebModel.TimKiemSP_Result)">
+            <Parameter Name="LoaiSP" Mode="In" Type="String" />
+            <Parameter Name="TenSP" Mode="In" Type="String" />
+            <Parameter Name="NSX" Mode="In" Type="String" />
+            <Parameter Name="GiaMin" Mode="In" Type="Int32" />
+            <Parameter Name="GiaMax" Mode="In" Type="Int32" />
+          </FunctionImport>
         </EntityContainer>
+        <ComplexType Name="TimKiemSP_Result">
+          <Property Type="String" Name="MaSP" Nullable="false" MaxLength="10" />
+          <Property Type="String" Name="MaNSX" Nullable="false" MaxLength="10" />
+          <Property Type="String" Name="TenSP" Nullable="true" MaxLength="200" />
+          <Property Type="String" Name="HinhAnh" Nullable="true" MaxLength="100" />
+          <Property Type="String" Name="ManHinh" Nullable="true" MaxLength="200" />
+          <Property Type="Decimal" Name="DonGia" Nullable="true" Precision="18" Scale="0" />
+          <Property Type="String" Name="HDH" Nullable="true" MaxLength="100" />
+          <Property Type="String" Name="CPU" Nullable="true" MaxLength="100" />
+          <Property Type="String" Name="GPU" Nullable="true" MaxLength="100" />
+          <Property Type="String" Name="Ram" Nullable="true" MaxLength="100" />
+          <Property Type="String" Name="Pin" Nullable="true" MaxLength="100" />
+          <Property Type="String" Name="Camera" Nullable="true" MaxLength="100" />
+          <Property Type="String" Name="BoNhoTrong" Nullable="true" MaxLength="100" />
+          <Property Type="String" Name="MoTa" Nullable="true" />
+          <Property Type="Double" Name="KhuyenMai" Nullable="true" />
+          <Property Type="Int32" Name="SoLuong" Nullable="true" />
+          <Property Type="String" Name="MaNSX1" Nullable="false" MaxLength="10" />
+          <Property Type="String" Name="TenNSX" Nullable="true" MaxLength="30" />
+        </ComplexType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -558,6 +591,30 @@
               <ScalarProperty Name="MaSP" ColumnName="MaSP" />
             </EndProperty>
           </AssociationSetMapping>
+          <FunctionImportMapping FunctionImportName="TimKiemSP" FunctionName="DoAnWebModel.Store.TimKiemSP">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="DoAnWebModel.TimKiemSP_Result">
+                <ScalarProperty Name="MaSP" ColumnName="MaSP" />
+                <ScalarProperty Name="MaNSX" ColumnName="MaNSX" />
+                <ScalarProperty Name="TenSP" ColumnName="TenSP" />
+                <ScalarProperty Name="HinhAnh" ColumnName="HinhAnh" />
+                <ScalarProperty Name="ManHinh" ColumnName="ManHinh" />
+                <ScalarProperty Name="DonGia" ColumnName="DonGia" />
+                <ScalarProperty Name="HDH" ColumnName="HDH" />
+                <ScalarProperty Name="CPU" ColumnName="CPU" />
+                <ScalarProperty Name="GPU" ColumnName="GPU" />
+                <ScalarProperty Name="Ram" ColumnName="Ram" />
+                <ScalarProperty Name="Pin" ColumnName="Pin" />
+                <ScalarProperty Name="Camera" ColumnName="Camera" />
+                <ScalarProperty Name="BoNhoTrong" ColumnName="BoNhoTrong" />
+                <ScalarProperty Name="MoTa" ColumnName="MoTa" />
+                <ScalarProperty Name="KhuyenMai" ColumnName="KhuyenMai" />
+                <ScalarProperty Name="SoLuong" ColumnName="SoLuong" />
+                <ScalarProperty Name="MaNSX1" ColumnName="MaNSX1" />
+                <ScalarProperty Name="TenNSX" ColumnName="TenNSX" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>

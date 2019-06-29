@@ -16,11 +16,38 @@ namespace ShopOnline.Areas.Admin.Controllers
 
         // GET: Admin/SanPhams
         [HttpGet]
-        public ActionResult Index(string SP)
+        public ActionResult Index(string LoaiSP,string TenSP,string MaNSX,string GiaMin,string GiaMax)
         {
-            ViewBag.SP = SP;
+            string min = GiaMin, max = GiaMax;
+            if (GiaMin == "")
+            {
+                ViewBag.GiaMin = "";
+                min = "0";
+            }
+            else
+            {
+                ViewBag.GiaMin = GiaMin;
+                min = GiaMin;
+            }
+            if (max == "")
+            {
+                max = Int32.MaxValue.ToString();
+                ViewBag.GiaMax = "";// Int32.MaxValue.ToString(); 
+            }
+            else
+            {
+                ViewBag.GiaMax = GiaMax;
+                max = GiaMax;
+            }
+            ViewBag.SP = LoaiSP;
+            ViewBag.TenSP = TenSP;
+            ViewBag.GiaMin = GiaMin;
+            ViewBag.GiaMax = GiaMax;
+            ViewBag.MaNSX = new SelectList(db.NhaSanXuats, "MaNSX", "TenNSX");
+            //var sanPhams = db.SanPhams.SqlQuery("Select * from SanPham where MaSP like '" + LoaiSP + "%'");
+
             //var sanPhams = db.SanPhams.Include(s => s.NhaSanXuat);
-            var sanPhams = db.SanPhams.SqlQuery("Select * from SanPham where MaSP like '" + SP + "%'");
+            var sanPhams = db.SanPhams.SqlQuery("Execute TimKiemSP '"+LoaiSP+"',N'"+TenSP+"','"+MaNSX+"','"+GiaMin+"','"+GiaMax+"'");
             return View(sanPhams.ToList());
         }
 
