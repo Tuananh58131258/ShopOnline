@@ -58,13 +58,13 @@
                 <div class="collapse navbar-collapse" id="collapseMenu">
 
                     <ul class="navbar-nav mr-auto">
-                        <li class="nav-item"><a href="blog_NguyenDucThai.html" class="nav-link active text-warning">Trang chủ</a></li>
+                        <li class="nav-item">@Html.ActionLink("Trang chủ", "HomePage", "HomePage", null, new {@class = "nav-link active text-warning" }) </li>
                         <li class="nav-item dropdown">
                             <a href="#" class="nav-link dropdown-toggle text-white" data-toggle="dropdown">Danh sách <i class="fas fa-list-ul"></i></a>
                             <ul class="dropdown-menu bg-dark">
-                                <li class="dropdown-item">@Html.ActionLink("Sản phẩm","Index","SanPhamKH",null)</li>
+                                <li class="dropdown-item">@Html.ActionLink("Sản phẩm","Index","SanPhamKHs",null, new { @class = "nav-link"})</li>
 
-                                <li class="dropdown-item"><a class="nav-link" href="#">Khách hàng</a></li>
+                                <li class="dropdown-item">@Html.ActionLink("Khách hàng", "Index", "TaiKhoanKHs", null, new { @class = "nav-link disabled" })</li>
 
                             </ul>
                         </li>

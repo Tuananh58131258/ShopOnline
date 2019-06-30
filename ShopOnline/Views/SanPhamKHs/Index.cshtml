@@ -12,7 +12,7 @@
     <div class="container-fluid" id="path">
         <div class="container">
             <ul>
-                <li>@Html.ActionLink("Home", "HomePage", "HomePage", null) <i class="fas fa-angle-right"></i></></li>
+                <li>@Html.ActionLink("Trang chủ", "HomePage", "HomePage",null,null) <i class="fas fa-angle-right"></i></></li>
                 <li>@Html.ActionLink("Sản phẩm", "Index", "SanPhamKH", null)
             </ul>
 
@@ -84,7 +84,16 @@
             </section>
             <section class="col-md-9">
                 <div id="list-phone-area" class="text-center">
+                    <div class="area-title text-left container-fluid"><h4><i class="fas fa-mobile-alt"></i>&nbsp;Điện thoại</h4></div>
                     @{Html.RenderAction("DanhSach_DT", "SanPhamKHs", new { page = 1 });}
+                </div>
+                <div id="list-laptop-area" class="text-center">
+                    <div class="area-title text-left container-fluid"><h4><i class="fas fa-laptop"></i>&nbsp;Laptop</h4></div>
+                    @{Html.RenderAction("DanhSachLaptop", "SanPhamKHs", new { page = 1 });}
+                </div>
+                <div id="list-tablet-area" class="text-center">
+                    <div class="area-title text-left container-fluid"><h4><i class="fas fa-tablet-alt"></i>&nbsp;Tablet</h4></div>
+                    @{Html.RenderAction("DanhSachTablet", "SanPhamKHs", new { page = 1 });}
                 </div>
             </section>
         </div>

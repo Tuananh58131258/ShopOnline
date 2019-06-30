@@ -24,6 +24,24 @@ namespace ShopOnline.Controllers
             
             return PartialView("DanhSachDT",model.ToPagedList(pageNumber,pageSize));
         }
+        public PartialViewResult DanhSachLaptop(int? page)
+        {
+            if (page == null) page = 1;
+            var model = db.SanPham.Where(x => x.MaSP.StartsWith("LT")).OrderBy(x => x.MaSP);
+            int pageSize = 6;
+            int pageNumber = (page ?? 1);
+
+            return PartialView("DanhSachLaptop", model.ToPagedList(pageNumber, pageSize));
+        }
+        public PartialViewResult DanhSachTablet(int? page)
+        {
+            if (page == null) page = 1;
+            var model = db.SanPham.Where(x => x.MaSP.StartsWith("TB")).OrderBy(x => x.MaSP);
+            int pageSize = 6;
+            int pageNumber = (page ?? 1);
+
+            return PartialView("DanhSachTablet", model.ToPagedList(pageNumber, pageSize));
+        }
         // GET: SanPhamKHs
         public ActionResult Index()
         {
