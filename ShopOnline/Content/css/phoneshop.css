@@ -405,6 +405,13 @@ footer p{
     border-bottom: 1px solid #e5e5e5;
     display:block;
 }
+.categories-menu li:hover{
+    background-color: #5dca7d;
+}
+.categories-menu .dropdown-item{
+    width:100%;
+    background:#e5e5e5;
+}
 .categories-menu a{
     color: black;
     margin-right:5px;
@@ -449,4 +456,40 @@ footer p{
 .list-phone .add-cart a:hover{
     background-color: #5dca7d;
     font-weight:bold;
+}
+#list-phone-area{
+    position: relative;
+    padding-bottom:100px;
+    margin-bottom: 48px;
+    border: 1px solid #e5e5e5;
+    box-shadow: 0 0 20px #f1f1f1;
+}
+#myPager{
+    position:absolute;
+    bottom: 5px;
+    
+    left: auto;
+}
+#myPager li:first-child{
+    border-left: 1px solid black;
+}
+#myPager li:last-child{
+    border-right:none;
+}
+#myPager li{
+     font-size: 15px;
+    line-height: 20px;
+    font-weight: 400;
+    color: #222222;
+    padding: 15px 30px;
+    border-right: 1px solid black;
+}
+#myPager li:hover{
+    background: rgba(93, 202, 125, 0.9);
+}
+#myPager li a{
+    color:black;
+}
+#myPager li a:hover{
+    color:#ffffff;
 }

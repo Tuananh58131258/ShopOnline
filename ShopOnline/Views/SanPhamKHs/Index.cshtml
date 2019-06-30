@@ -1,5 +1,5 @@
-﻿@model List<ShopOnline.Models.SanPhamKH>
-
+﻿@model PagedList.IPagedList<ShopOnline.Models.SanPhamKH>
+@using PagedList.Mvc
 @{
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/LayoutPage.cshtml";
@@ -34,30 +34,29 @@
 
                 <div id="categories">
                     <ul class="item-holder categories-menu">
-                        <li class="dropdown">
-                            <a class="dropdown-toggle nav-link" href="#" data-toggle="dropdown" aria-haspopup="true">Điện thoại &nbsp;<i class="fas fa-mobile-alt"></i></a>
-                            <ul class="dropdown-menu">
-                                <li class="dropdown-item"><a class="nav-link" href="#">Samsung </a></li>
-                                <li class="dropdown-item"><a class="nav-link" href="#">Apple </a></li>
-                                <li class="dropdown-item"><a class="nav-link" href="#">Oppo </a></li>
-                            </ul>
+                        <li>
+                            <a class="nav-link" href=".collapse-item1" data-toggle="collapse" aria-expanded="false">Điện thoại &nbsp;<i class="fas fa-mobile-alt"> </i>&nbsp;<i class="fas fa-caret-down"></i></a>
                         </li>
-                        <li class="dropdown nav-item">
-                            <a class="dropdown-toggle nav-link" data-toggle="dropdown">Tablet &nbsp;<i class="fas fa-tablet-alt"></i></a>
-                            <ul class="dropdown-menu">
-                                <li class="dropdown-item"><a class="nav-link" href="#">Samsung </a></li>
-                                <li class="dropdown-item"><a class="nav-link" href="#">Apple </a></li>
-                                <li class="dropdown-item"><a class="nav-link" href="#">Oppo </a></li>
-                            </ul>
+
+                        <li class="collapse-item1 collapse"><a class="nav-link" href="#">Samsung </a></li>
+                        <li class="collapse-item1 collapse"><a class="nav-link" href="#">Apple </a></li>
+                        <li class="collapse-item1 collapse"><a class="nav-link" href="#">Oppo </a></li>
+
+
+                        <li>
+                            <a class="nav-link" href=".collapse-item2" data-toggle="collapse" aria-expanded="false">Tablet &nbsp;<i class="fas fa-tablet-alt"> </i>&nbsp;<i class="fas fa-caret-down"></i></a>
                         </li>
-                        <li class="dropdown nav-item">
-                            <a class="dropdown-toggle nav-link" data-toggle="dropdown">Điện thoại &nbsp;<i class="fas fa-laptop"></i></a>
-                            <ul class="dropdown-menu">
-                                <li class="dropdown-item"><a class="nav-link" href="#">Samsung </a></li>
-                                <li class="dropdown-item"><a class="nav-link" href="#">Apple </a></li>
-                                <li class="dropdown-item"><a class="nav-link" href="#">Oppo </a></li>
-                            </ul>
+
+                        <li class="collapse-item2 collapse"><a class="nav-link" href="#">Samsung </a></li>
+                        <li class="collapse-item2 collapse"><a class="nav-link" href="#">Apple </a></li>
+                        <li class="collapse-item2 collapse"><a class="nav-link" href="#">Oppo </a></li>
+                        <li>
+                            <a class="nav-link" href=".collapse-item3" data-toggle="collapse" aria-expanded="false">Laptop &nbsp;<i class="fas fa-laptop"> </i>&nbsp;<i class="fas fa-caret-down"></i></a>
                         </li>
+
+                        <li class="collapse-item3 collapse"><a class="nav-link" href="#">Samsung </a></li>
+                        <li class="collapse-item3 collapse"><a class="nav-link" href="#">Apple </a></li>
+                        <li class="collapse-item3 collapse"><a class="nav-link" href="#">Oppo </a></li>
                     </ul>
                 </div>
                 <div id="timkiemnc">
@@ -83,8 +82,10 @@
                     }
                 </div>
             </section>
-            <section class="col-md-9" id="list-phone-area">
-                @{Html.RenderAction("DanhSach_DT", "SanPhamKHs", new { page = 1 });}
+            <section class="col-md-9">
+                <div id="list-phone-area" class="text-center">
+                    @{Html.RenderAction("DanhSach_DT", "SanPhamKHs", new { page = 1 });}
+                </div>
             </section>
         </div>
     </div>

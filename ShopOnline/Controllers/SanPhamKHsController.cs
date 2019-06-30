@@ -15,7 +15,7 @@ namespace ShopOnline.Controllers
     {
         private DoAnWebEntities2 db = new DoAnWebEntities2();
 
-        public ActionResult DanhSach_DT(int? page)
+        public PartialViewResult DanhSach_DT(int? page)
         {
             if (page == null) page = 1;
             var model = db.SanPham.Where(x => x.MaSP.StartsWith("DT")).OrderBy(x => x.MaSP);
@@ -29,7 +29,7 @@ namespace ShopOnline.Controllers
         {
             var sanPham = db.SanPham.Include(s => s.NhaSanXuat);
            
-            return View(sanPham.ToList());
+            return View();
         }
 
         // GET: SanPhamKHs/Details/5
