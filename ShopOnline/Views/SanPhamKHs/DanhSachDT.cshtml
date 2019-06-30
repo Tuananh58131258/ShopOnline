@@ -10,7 +10,7 @@
     {
         <div class="col-md-4 item-holder">
             <div class="image-holder  text-center">
-                <a href="#"><img src="@item.HinhAnh" /></a>
+                <a href="#"><img src="~/images/SanPham/@item.HinhAnh" /></a>
                 <div class="image-text">
                     <h6>@item.TenSP</h6>
 
@@ -35,7 +35,8 @@
         </div>
     </div>
     <script>
-$(function () {
+        $(function () {
+            $('#myPager li a').addClass("nav-link");
     $('#myPager').on('click', 'a', function () {
         $.ajax({
             url: this.href,
