@@ -8,13 +8,14 @@
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"
             integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
             crossorigin="anonymous"></script>
-    @System.Web.Optimization.Styles.Render("~/Content/css/bootstrap.min.css")
-    @System.Web.Optimization.Styles.Render("~/Content/fontawesome/css/fontawesome.min.css")
-    @System.Web.Optimization.Scripts.Render("~/Content/adminjs/submenu.js")
-    @System.Web.Optimization.Scripts.Render("~/Content/js/jquery.js")
-    @System.Web.Optimization.Styles.Render("~/Content/admincss/Submenu.css")
-    @System.Web.Optimization.Styles.Render("~/Content/admincss/grid.css")
-    @System.Web.Optimization.Styles.Render("~/Content/admincss/layout.css")
+    @*@Styles.Render("~/Content/css/bootstrap.min.css")
+    @Styles.Render("~/Content/fontawesome/css/fontawesome.min.css")
+    @Styles.Render("~/Content/admincss/Submenu.css")
+    @Styles.Render("~/Content/admincss/grid.css")
+    @Styles.Render("~/Content/admincss/layout.css")*@
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/Content/adminjs/submenu.js")
+    @Scripts.Render("~/Content/js/jquery.js")
 </head>
 <body style="box-sizing:border-box;" class="container">
     <header style="box-sizing:border-box;margin:0;padding:0;">
