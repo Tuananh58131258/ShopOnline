@@ -14,7 +14,6 @@ namespace ShopOnline.Models
     
     public partial class SanPhamKH
     {
-        
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public SanPhamKH()
         {
@@ -44,7 +43,5 @@ namespace ShopOnline.Models
         public virtual NhaSanXuatKH NhaSanXuat { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<MauSacKH> MauSac { get; set; }
-
-        
     }
 }
