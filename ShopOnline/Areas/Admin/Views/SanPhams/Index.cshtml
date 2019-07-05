@@ -4,7 +4,6 @@
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/AdminLayout.cshtml";
     var grid = new WebGrid(Model,canPage: true, rowsPerPage: 10);
-    @System.Web.Optimization.Styles.Render("~/Content/admincss/Sanpham.css")
 }
 <div class="timkiem">
     @using (Html.BeginForm("Index", "SanPhams", FormMethod.Get))
@@ -61,7 +60,7 @@ grid.Column("Chức năng", format:
 @<text>
     <a href="@Url.Action("Edit",new { id = item.MaSP})"><abbr title="Cập nhật dữ liệu"><i class="fa fa-twitter"></i></abbr></a>
     <a href="@Url.Action("Details",new { id = item.MaSP})" class="edit-btn"><abbr title="Xem chi tiết"><i class="fa fa-camera-retro"></i></abbr></a>
-    <a href="@Url.Action("Delete",new { id = item.MaSP})" class="edit-btn"><abbr title="Xóa dữ liệu"><i class="fab fa-airbnb"></i></abbr></a>
+    <a href="@Url.Action("Delete",new { id = item.MaSP})" class="edit-btn"><abbr title="Xóa dữ liệu"><i class="fab fa-twitter"></i></abbr></a>
 </text>),
     }
     )

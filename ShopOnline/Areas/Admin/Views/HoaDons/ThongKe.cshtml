@@ -1,0 +1,98 @@
+﻿
+@{
+    ViewBag.Title = "ThongKe";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+<div class="container-fluid row">
+    <div class="col-8">
+        <canvas id="line-chart"></canvas>
+    </div>
+    <script>
+    var dulieu = @Html.Raw(Json.Encode(ViewBag.ChartData));
+    var day = @Html.Raw(Json.Encode(ViewBag.Label));
+    var ctx = $('#line-chart');
+    var barChart = new Chart(ctx,{
+        type:'line',
+        data:{
+            labels:day,
+            datasets:[{
+                label:'Doanh thu',
+                data:dulieu,
+                //backgroundColor:'green',
+            }]
+        },
+        options: {
+            scales: {
+                yAxes: [{
+                    ticks: {
+                        beginAtZero: true
+                    }
+                }]
+            }
+        }
+        //data:{
+        //    label:["1","2","3","4","6"],
+        //    datasets:[{
+        //        label: "Example",
+        //        data:[1,2,3,4,5],
+        //        backgroundColor:["blue","red","pink",
+        //            "yellow","green"],
+        //        borderColor: "black",
+        //        borderWidth: 1
+        //    }]
+        //},
+        //options: {
+        //    maintainAspectRatio:false,
+        //    scales:{xAxes:[{ticks:{beginAtZero:true}}]},
+        //    legend:{display:false}
+        //},
+    });
+    </script>
+    <div class="col-4">
+        @using (Html.BeginForm("ThongKe", "HoaDons", FormMethod.Get))
+        {
+            <div class="container">
+                <div class='col-md-5'>
+                    <div class="form-group">
+                        <div class='input-group date' id='datetimepicker6'>
+                            <input type="text" name="start" value="@ViewBag.start" class="form-control" />
+                            <span class="input-group-addon">
+                                <span class="glyphicon glyphicon-calendar"></span>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+                <div class='col-md-5'>
+                    <div class="form-group">
+                        <div class='input-group date' id='datetimepicker7'>
+                            <input type="text" name="end" value="@ViewBag.end" class="form-control" />
+                            <span class="input-group-addon">
+                                <span class="glyphicon glyphicon-calendar"></span>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+                <button class="btn btn-success form-control" type="submit">Thống kê</button>
+            </div>
+        }
+    </div>
+    <script type="text/javascript">
+    $(document).ready(function() {
+        $(function() {
+            $('#datetimepicker6').datetimepicker({
+                format: 'MM/DD/YYYY'});
+            $('#datetimepicker7').datetimepicker({
+                format: 'MM/DD/YYYY',
+                useCurrent: false //Important! See issue #1075
+            });
+            $("#datetimepicker6").on("dp.change", function(e) {
+                $('#datetimepicker7').data("DateTimePicker").minDate(e.date);
+            });
+            $("#datetimepicker7").on("dp.change", function(e) {
+                $('#datetimepicker6').data("DateTimePicker").maxDate(e.date);
+            });
+        });
+    });
+    </script>
+</div>
+

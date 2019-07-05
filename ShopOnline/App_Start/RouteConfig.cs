@@ -18,6 +18,12 @@ namespace ShopOnline
                 url: "{controller}/{action}/{id}",
                 defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional }
             );
+            routes.MapRoute(
+             name: "Login",
+             url: "Login/Login",
+             defaults: new { controller = "Login", action = "Login", id = UrlParameter.Optional },
+             namespaces: new[] { "ShopOnline.Area.Admin.Controllers" }
+         );
         }
     }
 }

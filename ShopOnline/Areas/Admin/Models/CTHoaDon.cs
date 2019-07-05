@@ -17,7 +17,7 @@ namespace ShopOnline.Areas.Admin.Models
         public string MaHoaDon { get; set; }
         public string MaSP { get; set; }
         public Nullable<int> SoLuong { get; set; }
-        public Nullable<decimal> DonGia { get; set; }
+        public Nullable<int> DonGia { get; set; }
     
         public virtual HoaDon HoaDon { get; set; }
         public virtual SanPham SanPham { get; set; }
