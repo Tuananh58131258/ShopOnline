@@ -15,7 +15,7 @@
                 <td>
                     <input class="form-control" type="text" name="TenSP" value="@ViewBag.TenSP" placeholder="tên sản phẩm">
                 </td>
-                <td>
+                <td style="padding-left:10px;">
                     <button type="submit" class="btn btn-primary btn-sm">Tìm kiếm</button>
                 </td>
                 <td>
@@ -33,14 +33,14 @@
                 <td>
                     <input class="form-control" type="text" name="GiaMin" value="@ViewBag.GiaMin">
                 </td>
-                <td>đến</td>
+                <td style="padding-left:10px;">Đến</td>
                 <td><input class="form-control" type="text" name="GiaMax" value="@ViewBag.GiaMax"></td>
             </tr>
         </table>
     }
 </div>
 
-<div class="grid-container">
+<div class="grid-container" style="padding:10px;">
     @grid.GetHtml(
     tableStyle: "table table-bordered table-hover",
     footerStyle: "grid-footer",

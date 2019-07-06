@@ -151,6 +151,10 @@ body {
     min-height: 100vh;
     max-width:1000px;
     transition: all 0.3s;
+    
+}
+#content .box{
+    float:left;
 }
 #content .navtopbar{
     border:2px solid blue;
@@ -171,3 +175,4 @@ body {
         display: none;
     }
 }
+

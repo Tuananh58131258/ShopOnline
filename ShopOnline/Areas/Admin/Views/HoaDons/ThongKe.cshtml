@@ -3,8 +3,9 @@
     ViewBag.Title = "ThongKe";
     Layout = "~/Views/Shared/AdminLayout.cshtml";
 }
-<div class="container-fluid row">
-    <div class="col-8">
+
+<div class="container-fluid" >
+    <div style="width:60%;" class="box">
         <canvas id="line-chart"></canvas>
     </div>
     <script>
@@ -48,34 +49,38 @@
         //},
     });
     </script>
-    <div class="col-4">
+    
+    <div style="width:25%;" class="box">
         @using (Html.BeginForm("ThongKe", "HoaDons", FormMethod.Get))
         {
-            <div class="container">
-                <div class='col-md-5'>
-                    <div class="form-group">
+            <div class="container" style="margin-left:25px;">
+                <div>
+                    <div style="width:250px;">
+                        Từ ngày
                         <div class='input-group date' id='datetimepicker6'>
-                            <input type="text" name="start" value="@ViewBag.start" class="form-control" />
+                           <input type="text" name="start" value="@ViewBag.start" class="form-control" />
                             <span class="input-group-addon">
                                 <span class="glyphicon glyphicon-calendar"></span>
                             </span>
                         </div>
                     </div>
                 </div>
-                <div class='col-md-5'>
+                <div style="width:250px;">
                     <div class="form-group">
+                        Đến ngày
                         <div class='input-group date' id='datetimepicker7'>
-                            <input type="text" name="end" value="@ViewBag.end" class="form-control" />
+                           <input type="text" name="end" value="@ViewBag.end" class="form-control" />
                             <span class="input-group-addon">
                                 <span class="glyphicon glyphicon-calendar"></span>
                             </span>
                         </div>
                     </div>
                 </div>
-                <button class="btn btn-success form-control" type="submit">Thống kê</button>
+                <button class="btn btn-success form-control" type="submit" style="width:100px;">Thống kê</button>
             </div>
         }
     </div>
+       
     <script type="text/javascript">
     $(document).ready(function() {
         $(function() {
