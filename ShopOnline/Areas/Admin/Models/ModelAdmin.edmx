@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="DoAnWebModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="DoAnWebModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="CTHoaDon">
           <Key>
             <PropertyRef Name="MaHoaDon" />
@@ -199,6 +199,10 @@
           <Parameter Name="GiaMin" Type="int" Mode="In" />
           <Parameter Name="GiaMax" Type="int" Mode="In" />
         </Function>
+        <Function Name="USP_Login" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="userName" Type="nvarchar" Mode="In" />
+          <Parameter Name="passWord" Type="nvarchar" Mode="In" />
+        </Function>
         <EntityContainer Name="DoAnWebModelStoreContainer">
           <EntitySet Name="CTHoaDon" EntityType="Self.CTHoaDon" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="HoaDon" EntityType="Self.HoaDon" Schema="dbo" store:Type="Tables" />
@@ -242,8 +246,7 @@
             <End Role="TaiKhoan" EntitySet="TaiKhoan" />
           </AssociationSet>
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="DoAnWebModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -464,6 +467,10 @@
             <Parameter Name="GiaMin" Mode="In" Type="Int32" />
             <Parameter Name="GiaMax" Mode="In" Type="Int32" />
           </FunctionImport>
+          <FunctionImport Name="USP_Login" ReturnType="Collection(DoAnWebModel.USP_Login_Result)">
+            <Parameter Name="userName" Mode="In" Type="String" />
+            <Parameter Name="passWord" Mode="In" Type="String" />
+          </FunctionImport>
         </EntityContainer>
         <ComplexType Name="TimKiemSP_Result">
           <Property Type="String" Name="MaSP" Nullable="false" MaxLength="10" />
@@ -484,6 +491,16 @@
           <Property Type="Int32" Name="SoLuong" Nullable="true" />
           <Property Type="String" Name="MaNSX1" Nullable="false" MaxLength="10" />
           <Property Type="String" Name="TenNSX" Nullable="true" MaxLength="30" />
+        </ComplexType>
+        <ComplexType Name="USP_Login_Result">
+          <Property Type="String" Name="MaTaiKhoan" Nullable="false" MaxLength="10" />
+          <Property Type="String" Name="MaLoaiTK" Nullable="false" MaxLength="10" />
+          <Property Type="String" Name="TenTaiKhoan" Nullable="true" MaxLength="30" />
+          <Property Type="String" Name="MatKhau" Nullable="true" MaxLength="30" />
+          <Property Type="String" Name="HoTen" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="DiaChi" Nullable="true" MaxLength="100" />
+          <Property Type="String" Name="SDT" Nullable="true" MaxLength="50" />
+          <Property Type="Boolean" Name="GioiTinh" Nullable="true" />
         </ComplexType>
       </Schema>
     </edmx:ConceptualModels>
@@ -610,6 +627,20 @@
                 <ScalarProperty Name="SoLuong" ColumnName="SoLuong" />
                 <ScalarProperty Name="MaNSX1" ColumnName="MaNSX1" />
                 <ScalarProperty Name="TenNSX" ColumnName="TenNSX" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="USP_Login" FunctionName="DoAnWebModel.Store.USP_Login">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="DoAnWebModel.USP_Login_Result">
+                <ScalarProperty Name="MaTaiKhoan" ColumnName="MaTaiKhoan" />
+                <ScalarProperty Name="MaLoaiTK" ColumnName="MaLoaiTK" />
+                <ScalarProperty Name="TenTaiKhoan" ColumnName="TenTaiKhoan" />
+                <ScalarProperty Name="MatKhau" ColumnName="MatKhau" />
+                <ScalarProperty Name="HoTen" ColumnName="HoTen" />
+                <ScalarProperty Name="DiaChi" ColumnName="DiaChi" />
+                <ScalarProperty Name="SDT" ColumnName="SDT" />
+                <ScalarProperty Name="GioiTinh" ColumnName="GioiTinh" />
               </ComplexTypeMapping>
             </ResultMapping>
           </FunctionImportMapping>

@@ -10,6 +10,7 @@ using ShopOnline.Areas.Admin.Models;
 
 namespace ShopOnline.Areas.Admin.Controllers
 {
+    [Authorize]
     public class SanPhamsController : Controller
     {
         private DoAnWebEntities db = new DoAnWebEntities();

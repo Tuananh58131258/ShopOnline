@@ -11,6 +11,7 @@ using System.Collections;
 
 namespace ShopOnline.Areas.Admin.Controllers
 {
+    [Authorize]
     public class HoaDonsController : Controller
     {
         private DoAnWebEntities db = new DoAnWebEntities();

@@ -50,7 +50,7 @@ body {
 ----------------------------------------------------- */
 .wrapper {
     display: flex;
-    align-items: stretch;
+    /*align-items: stretch;*/
 }
 
 #sidebar {
@@ -62,7 +62,7 @@ body {
 }
 
 #sidebar.active {
-    margin-left: -250px;
+    display:none;
 }
 
 #sidebar .sidebar-header {
@@ -148,9 +148,13 @@ body {
 ----------------------------------------------------- */
 #content {
     padding: 20px;
-    min-width:calc(100%-250px);
     min-height: 100vh;
+    max-width:1000px;
     transition: all 0.3s;
+}
+#content .navtopbar{
+    border:2px solid blue;
+    
 }
 
 /* ---------------------------------------------------

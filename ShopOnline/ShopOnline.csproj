@@ -336,7 +336,7 @@
     <Content Include="Areas\Admin\Models\ModelAdmin.edmx.diagram">
       <DependentUpon>ModelAdmin.edmx</DependentUpon>
     </Content>
-    <Content Include="Areas\Admin\Views\Login\Login.cshtml" />
+    <Content Include="Areas\Admin\Views\TaiKhoans\Login.cshtml" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />
@@ -376,11 +376,9 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Areas\Admin\AdminAreaRegistration.cs" />
     <Compile Include="Areas\Admin\Controllers\HoaDonsController.cs" />
-    <Compile Include="Areas\Admin\Controllers\LoginController.cs" />
     <Compile Include="Areas\Admin\Controllers\NhaSanXuatsController.cs" />
     <Compile Include="Areas\Admin\Controllers\SanPhamsController.cs" />
     <Compile Include="Areas\Admin\Controllers\TaiKhoansController.cs" />
-    <Compile Include="Areas\Admin\Controllers\ThongKeController.cs" />
     <Compile Include="Areas\Admin\Models\CTHoaDon.cs">
       <DependentUpon>ModelAdmin.tt</DependentUpon>
     </Compile>
@@ -421,6 +419,9 @@
       <DependentUpon>ModelAdmin.tt</DependentUpon>
     </Compile>
     <Compile Include="Areas\Admin\Models\TimKiemSP_Result.cs">
+      <DependentUpon>ModelAdmin.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\Admin\Models\USP_Login_Result.cs">
       <DependentUpon>ModelAdmin.tt</DependentUpon>
     </Compile>
     <Compile Include="Controllers\HomePageController.cs" />
