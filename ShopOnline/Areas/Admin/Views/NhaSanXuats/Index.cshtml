@@ -23,9 +23,9 @@
             //grid.Column(format: (item) => Html.ActionLink("Xóa", "Delete","SanPhams", new { id = item.MaSP },"s")),
             grid.Column("Chức năng", format:
             @<text>
-                <a href="@Url.Action("Edit",new { id = item.MaNSX})"><abbr title="Cập nhật dữ liệu"><i class="fa fa-twitter"></i></abbr></a>
-                <a href="@Url.Action("Details",new { id = item.MaNSX})" class="edit-btn"><abbr title="Xem chi tiết"><i class="fa fa-camera-retro"></i></abbr></a>
-                <a href="@Url.Action("Delete",new { id = item.MaNSX})" class="edit-btn"><abbr title="Xóa dữ liệu"><i class="fab fa-airbnb"></i></abbr></a>
+                <a href="@Url.Action("Edit",new { id = item.MaNSX})"><abbr title="Cập nhật dữ liệu"><i class="fas fa-edit"></i></abbr></a>
+                <a href="@Url.Action("Details",new { id = item.MaNSX})" class="edit-btn"><abbr title="Xem chi tiết"><i class="fas fa-info-circle"></i></abbr></a>
+                <a href="@Url.Action("Delete",new { id = item.MaNSX})" class="edit-btn"><abbr title="Xóa dữ liệu"><i class="fas fa-trash-alt"></i></abbr></a>
             </text>),
     }
     )

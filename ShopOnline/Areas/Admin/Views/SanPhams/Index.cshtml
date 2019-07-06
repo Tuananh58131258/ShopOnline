@@ -4,7 +4,6 @@
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/AdminLayout.cshtml";
     var grid = new WebGrid(Model,canPage: true, rowsPerPage: 10);
-    @System.Web.Optimization.Styles.Render("~/Content/admincss/Sanpham.css")
 }
 <div class="timkiem">
     @using (Html.BeginForm("Index", "SanPhams", FormMethod.Get))
@@ -16,7 +15,7 @@
                 <td>
                     <input class="form-control" type="text" name="TenSP" value="@ViewBag.TenSP" placeholder="tên sản phẩm">
                 </td>
-                <td>
+                <td style="padding-left:10px;">
                     <button type="submit" class="btn btn-primary btn-sm">Tìm kiếm</button>
                 </td>
                 <td>
@@ -34,14 +33,14 @@
                 <td>
                     <input class="form-control" type="text" name="GiaMin" value="@ViewBag.GiaMin">
                 </td>
-                <td>đến</td>
+                <td style="padding-left:10px;">Đến</td>
                 <td><input class="form-control" type="text" name="GiaMax" value="@ViewBag.GiaMax"></td>
             </tr>
         </table>
     }
 </div>
 
-<div class="grid-container">
+<div class="grid-container" style="padding:10px;">
     @grid.GetHtml(
     tableStyle: "table table-bordered table-hover",
     footerStyle: "grid-footer",
@@ -54,14 +53,11 @@
 grid.Column("TenSP","Tên sản phẩm"), //the model fields to display
 grid.Column("DonGia","Giá",format:@<text> @item.DonGia.ToString("#,##0")</text>),
 grid.Column("HinhAnh","Hình Ảnh"),
-//grid.Column(format: (item) => Html.ActionLink("Cập nhật", "Edit", "SanPhams",new { id = item.MaSP },"s")),
-//grid.Column(format: (item) => Html.ActionLink("Xem chi tiết", "Details","SanPhams", new { id = item.MaSP },"s")),
-//grid.Column(format: (item) => Html.ActionLink("Xóa", "Delete","SanPhams", new { id = item.MaSP },"s")),
 grid.Column("Chức năng", format:
 @<text>
-    <a href="@Url.Action("Edit",new { id = item.MaSP})"><abbr title="Cập nhật dữ liệu"><i class="fa fa-twitter"></i></abbr></a>
-    <a href="@Url.Action("Details",new { id = item.MaSP})" class="edit-btn"><abbr title="Xem chi tiết"><i class="fa fa-camera-retro"></i></abbr></a>
-    <a href="@Url.Action("Delete",new { id = item.MaSP})" class="edit-btn"><abbr title="Xóa dữ liệu"><i class="fab fa-airbnb"></i></abbr></a>
+    <a href="@Url.Action("Edit",new { id = item.MaSP})"><abbr title="Cập nhật dữ liệu"><i class="fas fa-edit"></i></abbr></a>
+    <a href="@Url.Action("Details",new { id = item.MaSP})" class="edit-btn"><abbr title="Xem chi tiết"><i class="fas fa-info-circle"></i></abbr></a>
+    <a href="@Url.Action("Delete",new { id = item.MaSP})" class="edit-btn"><abbr title="Xóa dữ liệu"><i class="fas fa-trash-alt"></i></abbr></a>
 </text>),
     }
     )

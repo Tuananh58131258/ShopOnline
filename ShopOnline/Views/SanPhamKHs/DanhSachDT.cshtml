@@ -2,9 +2,6 @@
 @model PagedList.IPagedList<ShopOnline.Models.SanPhamKH>
 @using PagedList.Mvc;
 
-@{
-    var list = ViewBag.model;
-}
 <div class="list-phone row">
     @foreach (var item in Model)
     {
@@ -37,6 +34,7 @@
     <script>
         $(function () {
             $('#myPager li a').addClass("nav-link");
+           
     $('#myPager').on('click', 'a', function () {
         $.ajax({
             url: this.href,

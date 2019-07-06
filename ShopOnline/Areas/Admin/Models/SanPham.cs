@@ -11,8 +11,7 @@ namespace ShopOnline.Areas.Admin.Models
 {
     using System;
     using System.Collections.Generic;
-    using System.ComponentModel.DataAnnotations;
-
+    
     public partial class SanPham
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
@@ -27,7 +26,6 @@ namespace ShopOnline.Areas.Admin.Models
         public string TenSP { get; set; }
         public string HinhAnh { get; set; }
         public string ManHinh { get; set; }
-        [DisplayFormat(DataFormatString = "{0:#,##0}", ApplyFormatInEditMode = true)]
         public Nullable<decimal> DonGia { get; set; }
         public string HDH { get; set; }
         public string CPU { get; set; }

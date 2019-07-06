@@ -1,0 +1,25 @@
+﻿
+
+@{
+    ViewBag.Title = "KhuyenMai";
+    Layout = "~/Views/Shared/LayoutPage.cshtml";
+}
+
+<div id="dssanpham">
+
+    <div class="container">
+        <div class="row">
+           
+            <section class="col-md-12">
+                <div id="list-phone-area" class="text-center">
+                    <div class="area-title text-left container-fluid"><h4><i class="fas fa-fire"></i>&nbsp;Khuyến mãi hot</h4></div>
+                    @{Html.RenderAction("ListKhuyenMai", "SanPhamKHs", new { page = 1 });}
+                </div>
+                
+            </section>
+        </div>
+    </div>
+
+</div>
+
+

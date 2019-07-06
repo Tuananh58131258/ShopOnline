@@ -7,6 +7,7 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using ShopOnline.Areas.Admin.Models;
+using System.Web.Security;
 
 namespace ShopOnline.Areas.Admin.Controllers
 {
@@ -119,7 +120,50 @@ namespace ShopOnline.Areas.Admin.Controllers
             db.SaveChanges();
             return RedirectToAction("Index");
         }
+        [AllowAnonymous]
+        public ActionResult Login()
+        {
+            return View();
+        }
+        public bool Validate(string username, string password)
+        {
+            var user = db.TaiKhoans.SqlQuery("execute USP_Login '"+username+"','"+password+"'").ToList();
+            if (user.Count() != 0)
+                return true;
+            return false;
+        }
+        [HttpPost]
+        public ActionResult LogOff()
+        {
+            //WebSecurity.Logout();
+            FormsAuthentication.SignOut();
+            return RedirectToAction("ThongKe", "HoaDons", new { Area = "Admin" });
+        }
 
+        private ActionResult RedirectToLocal(string returnUrl)
+        {
+            if (Url.IsLocalUrl(returnUrl))
+            {
+                return Redirect(returnUrl);
+            }
+            else
+            {
+                return RedirectToAction("ThongKe", "HoaDons",new { Area ="Admin"});
+            }
+        }
+        [HttpPost]
+        [AllowAnonymous]
+        public ActionResult Login(TaiKhoan user, string returnUrl)
+        {
+            if (Validate(user.TenTaiKhoan, user.MatKhau))
+            {
+                FormsAuthentication.SetAuthCookie(user.TenTaiKhoan,false);
+                return RedirectToLocal(returnUrl);
+            }
+            // If we got this far, something failed, redisplay form
+            ModelState.AddModelError("", "The user name or password provided is incorrect.");
+            return View(user);
+        }
         protected override void Dispose(bool disposing)
         {
             if (disposing)

@@ -3,21 +3,10 @@
 @{
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/LayoutPage.cshtml";
-
-
-
 }
 
 <div id="dssanpham">
-    <div class="container-fluid" id="path">
-        <div class="container">
-            <ul>
-                <li>@Html.ActionLink("Trang chủ", "HomePage", "HomePage",null,null) <i class="fas fa-angle-right"></i></></li>
-                <li>@Html.ActionLink("Sản phẩm", "Index", "SanPhamKH", null)
-            </ul>
-
-        </div>
-    </div>
+    
     <div class="container">
         <div class="row">
             <section class="col-md-3">
@@ -38,9 +27,9 @@
                             <a class="nav-link" href=".collapse-item1" data-toggle="collapse" aria-expanded="false">Điện thoại &nbsp;<i class="fas fa-mobile-alt"> </i>&nbsp;<i class="fas fa-caret-down"></i></a>
                         </li>
 
-                        <li class="collapse-item1 collapse"><a class="nav-link" href="#">Samsung </a></li>
-                        <li class="collapse-item1 collapse"><a class="nav-link" href="#">Apple </a></li>
-                        <li class="collapse-item1 collapse"><a class="nav-link" href="#">Oppo </a></li>
+                        <li class="collapse-item1 collapse" id="samsung"><a class="nav-link" href="#">Samsung </a></li>
+                        <li class="collapse-item1 collapse" id="apple"><a class="nav-link" href="#">Apple </a></li>
+                        <li class="collapse-item1 collapse" id="oppo"><a class="nav-link" href="#">Oppo </a></li>
 
 
                         <li>

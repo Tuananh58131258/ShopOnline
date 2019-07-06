@@ -4,14 +4,14 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="6a6623d6a5964a5a9f76497711035c25" Name="Diagram1">
-        <EntityTypeShape EntityType="DoAnWebModel.CTHoaDon" Width="1.5" PointX="7.5" PointY="1.25" IsExpanded="true" />
+      <Diagram DiagramId="d6f0b657fe594502ae8b508a85fec611" Name="Diagram1">
+        <EntityTypeShape EntityType="DoAnWebModel.CTHoaDon" Width="1.5" PointX="7.5" PointY="1.125" IsExpanded="true" />
         <EntityTypeShape EntityType="DoAnWebModel.HoaDon" Width="1.5" PointX="5.25" PointY="1.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="DoAnWebModel.HoiÐap" Width="1.5" PointX="5.25" PointY="4.375" IsExpanded="true" />
-        <EntityTypeShape EntityType="DoAnWebModel.LoaiTaiKhoan" Width="1.5" PointX="0.75" PointY="2.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="DoAnWebModel.MauSac" Width="1.5" PointX="3" PointY="8.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="DoAnWebModel.NhaSanXuat" Width="1.5" PointX="3" PointY="10.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="DoAnWebModel.SanPham" Width="1.5" PointX="5.25" PointY="7.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DoAnWebModel.HoiÐap" Width="1.5" PointX="5.25" PointY="4.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="DoAnWebModel.LoaiTaiKhoan" Width="1.5" PointX="0.75" PointY="2.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DoAnWebModel.MauSac" Width="1.5" PointX="3" PointY="8" IsExpanded="true" />
+        <EntityTypeShape EntityType="DoAnWebModel.NhaSanXuat" Width="1.5" PointX="3" PointY="10.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="DoAnWebModel.SanPham" Width="1.5" PointX="5.25" PointY="7.625" IsExpanded="true" />
         <EntityTypeShape EntityType="DoAnWebModel.TaiKhoan" Width="1.5" PointX="3" PointY="2" IsExpanded="true" />
         <AssociationConnector Association="DoAnWebModel.FK_CTHOADON_ASSOCIATI_HOAÐON" ManuallyRouted="false" />
         <AssociationConnector Association="DoAnWebModel.FK_CTHOADON_ASSOCIATI_SANPHAM" ManuallyRouted="false" />

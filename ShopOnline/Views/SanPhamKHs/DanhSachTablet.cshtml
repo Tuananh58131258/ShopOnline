@@ -21,7 +21,7 @@
                     </div>
                 </div>
                 <div class="add-cart">
-                    <h3><a href="#"><abbr title="Thêm vào giỏ"><i class="fas fa-cart-plus"></i></abbr></a></h3>
+                    <h3><a href="@Url.Action("AddItem","Cart",new { quantity=1,MaSP=@item.MaSP})"><abbr title="Thêm vào giỏ"><i class="fas fa-cart-plus"></i></abbr></a></h3>
                 </div>
             </div>
         </div>

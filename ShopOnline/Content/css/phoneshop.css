@@ -6,6 +6,7 @@ ul{
 li{display: inline-block;
 
 }
+a{text-decoration:none;}
 h2{
     text-transform:uppercase;
    
@@ -83,6 +84,7 @@ span{
 
 header{
 	background-color: #09314f;
+    margin-bottom: 20px;
 }
 .fa-blogger{
 	margin:0 auto;
@@ -359,7 +361,7 @@ footer p{
 
 /*--------------DANH SACH SP--------*/
 /*--------------search section--------*/
-#dssanpham #search-area{
+ #search-area{
     position: relative;
     height: 50px;
     margin-bottom: 30px;
@@ -367,14 +369,14 @@ footer p{
     padding:0;
 }
 
-#dssanpham #search-area input{
+ #search-area input{
     color: #222222;
     width: 100%;
     padding: 10px;
     font-family: 'Open Sans', sans-serif;
 
 }
-#dssanpham #btn-search{
+#btn-search{
     position: absolute;
     width: 40px;
     height: 40px;
@@ -385,6 +387,7 @@ footer p{
     background: transparent;
    border:none;
 }
+
 
 /*--------------categories section--------*/
 
@@ -574,4 +577,76 @@ footer p{
 }
 #myPager3 li a:hover{
     color:#ffffff;
+}
+/*--------list all dt--------*/
+#list-phone-area2{
+    position: relative;
+    padding-bottom:100px;
+    margin-bottom: 48px;
+    border: 1px solid #e5e5e5;
+    box-shadow: 0 0 20px #f1f1f1;
+    padding-top:50px;
+}
+#myPager4{
+    position:absolute;
+    bottom: 5px;
+    
+    left: auto;
+}
+#myPager4 li:first-child{
+    border-left: 1px solid black;
+}
+#myPager4 li:last-child{
+    border-right:none;
+}
+#myPager4 li{
+  
+    border-right: 1px solid black;
+}
+#myPager4 li:hover{
+    background: rgba(93, 202, 125, 0.9);
+}
+#myPager4 li a{
+    color:black;
+    
+}
+#myPager4 li a:hover{
+    color:#ffffff;
+}
+
+#timkiemnc{
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+#timkiemnc ul li{display: block;}
+#timkiemnc li:hover{font-weight:bold;}
+.image-text li{
+    display:block;
+}
+.form-group{
+        display: inline-block;
+    margin-bottom: 32px;
+    position:relative;
+
+}
+.form-group input{
+        width: 65px;
+    height: 50px;
+    margin-right: 17px;
+    padding-right: 10px;
+    border: 1px solid #e5e5e5;
+    padding-left:17px;
+}
+.btn_add{background:#5dca7d;
+         font-size: 14px;
+    font-weight: 700;
+    line-height: 26px;
+    padding: 12px 30px;
+    font-family: 'Open Sans', sans-serif;
+}
+#giohang{position:relative;
+         margin-bottom:50px;
+}
+figure img{
+   width:100%;
 }

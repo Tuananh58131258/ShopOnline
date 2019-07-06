@@ -16,8 +16,19 @@ namespace ShopOnline
             routes.MapRoute(
                 name: "Default",
                 url: "{controller}/{action}/{id}",
-                defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional }
+                defaults: new { controller = "HomePage", action = "HomePage", id = UrlParameter.Optional }
             );
+            routes.MapRoute(
+               name: "Home",
+               url: "HomePage",
+               defaults: new { controller = "HomePage", action = "HomePage", id = UrlParameter.Optional }
+           );
+            routes.MapRoute(
+             name: "Add Cart",
+             url: "them-gio-hang",
+             defaults: new { controller = "Cart", action = "AddItem", id = UrlParameter.Optional },
+             namespaces: new[] {"ShopOnline.Controllers"}
+         );
         }
     }
 }

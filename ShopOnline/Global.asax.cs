@@ -14,10 +14,10 @@ namespace ShopOnline
         protected void Application_Start()
         {
             BundleConfig.RegisterBundles(BundleTable.Bundles);
-            System.Web.Optimization.BundleTable.Bundles.Add(new System.Web.Optimization.ScriptBundle("~/bundle/js")
-              .Include("~/Content/js/*.js"));
-            System.Web.Optimization.BundleTable.Bundles.Add(new System.Web.Optimization.StyleBundle("~/bundle/css")
-                 .Include("~/Content/css/*.css"));
+            //System.Web.Optimization.BundleTable.Bundles.Add(new System.Web.Optimization.ScriptBundle("~/bundle/js")
+            //  .Include("~/Content/js/*.js"));
+            //System.Web.Optimization.BundleTable.Bundles.Add(new System.Web.Optimization.StyleBundle("~/bundle/css")
+            //     .Include("~/Content/css/*.css"));
             AreaRegistration.RegisterAllAreas();
             RouteConfig.RegisterRoutes(RouteTable.Routes);
         }
