@@ -25,7 +25,6 @@ namespace ShopOnline.Areas.Admin.Models
         public string DiaChiGiaoHang { get; set; }
         public Nullable<System.DateTime> NgayLap { get; set; }
         public string TinhTrang { get; set; }
-        public Nullable<decimal> TongTien { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<CTHoaDon> CTHoaDons { get; set; }

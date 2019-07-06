@@ -10,16 +10,16 @@
 namespace ShopOnline.Areas.Admin.Models
 {
     using System;
-    using System.Collections.Generic;
     
-    public partial class CTHoaDon
+    public partial class USP_Login_Result
     {
-        public string MaHoaDon { get; set; }
-        public string MaSP { get; set; }
-        public Nullable<int> SoLuong { get; set; }
-        public Nullable<int> DonGia { get; set; }
-    
-        public virtual HoaDon HoaDon { get; set; }
-        public virtual SanPham SanPham { get; set; }
+        public string MaTaiKhoan { get; set; }
+        public string MaLoaiTK { get; set; }
+        public string TenTaiKhoan { get; set; }
+        public string MatKhau { get; set; }
+        public string HoTen { get; set; }
+        public string DiaChi { get; set; }
+        public string SDT { get; set; }
+        public Nullable<bool> GioiTinh { get; set; }
     }
 }

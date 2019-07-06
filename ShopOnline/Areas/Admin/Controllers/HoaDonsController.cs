@@ -7,9 +7,11 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using ShopOnline.Areas.Admin.Models;
+using System.Collections;
 
 namespace ShopOnline.Areas.Admin.Controllers
 {
+    [Authorize]
     public class HoaDonsController : Controller
     {
         private DoAnWebEntities db = new DoAnWebEntities();
@@ -119,7 +121,44 @@ namespace ShopOnline.Areas.Admin.Controllers
             db.SaveChanges();
             return RedirectToAction("Index");
         }
-
+        [HttpGet]
+        public ActionResult ThongKe(string start,string end)
+        {
+            ViewBag.start = start;
+            ViewBag.end = end;
+            DateTime daystart = Convert.ToDateTime(start);
+            DateTime dayend = Convert.ToDateTime(end);
+            var dayl = db.HoaDons.Where(x => x.NgayLap >= daystart.Date && x.NgayLap <= dayend.Date)
+                .Select(x => x.NgayLap).Distinct().ToList();
+            ArrayList day = new ArrayList();
+            List<string> hoaDon = new List<string>();
+            List<int> dulieu = new List<int>();
+            int tien = 0, tongtien = 0;
+            foreach (DateTime item in dayl)
+            {
+                day.Add(item.ToString("dd/MM/yyyy"));
+                foreach (var hd in db.HoaDons)
+                {
+                    if (hd.NgayLap.Value.Date == item.Date)
+                    {
+                        foreach (var ct in db.CTHoaDons)
+                        {
+                            if (ct.MaHoaDon == hd.MaHoaDon)
+                            {
+                                tien += ct.SoLuong.Value * ct.DonGia.Value;
+                            }
+                        }
+                        tongtien += tien;
+                        tien = 0;
+                    }
+                }
+                dulieu.Add(tongtien);
+                tongtien = 0;
+            }
+            ViewBag.Label = day;
+            ViewBag.ChartData = dulieu;
+            return View();
+        }
         protected override void Dispose(bool disposing)
         {
             if (disposing)

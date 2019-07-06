@@ -60,5 +60,18 @@ namespace ShopOnline.Areas.Admin.Models
     
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<TimKiemSP_Result>("TimKiemSP", loaiSPParameter, tenSPParameter, nSXParameter, giaMinParameter, giaMaxParameter);
         }
+    
+        public virtual ObjectResult<USP_Login_Result> USP_Login(string userName, string passWord)
+        {
+            var userNameParameter = userName != null ?
+                new ObjectParameter("userName", userName) :
+                new ObjectParameter("userName", typeof(string));
+    
+            var passWordParameter = passWord != null ?
+                new ObjectParameter("passWord", passWord) :
+                new ObjectParameter("passWord", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<USP_Login_Result>("USP_Login", userNameParameter, passWordParameter);
+        }
     }
 }

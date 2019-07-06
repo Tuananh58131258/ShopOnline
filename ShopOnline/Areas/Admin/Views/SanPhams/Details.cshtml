@@ -4,58 +4,65 @@
     ViewBag.Title = "Details";
     Layout = "~/Views/Shared/AdminLayout.cshtml";
 }
+<div>
+<div class="cach">
+    <img src="~/images/SanPham/@Html.DisplayFor(model=>model.HinhAnh)" alt="Alternate Text" style="background:gray;" height="350" width="300" />
+</div>
+<div class="cach" style="margin-left:25px;">
 <table>
     <tr>
-        <td rowspan="13"><img src="~/images/SanPham/@Html.DisplayFor(model=>model.HinhAnh)" alt="Alternate Text" style="background:gray;" height="350" width="300" /></td>
         <td>Tên</td>
-        <td>@Html.DisplayFor(model => model.TenSP)</td>
+        <td class="trong">@Html.DisplayFor(model => model.TenSP)</td>
     </tr>
+
     <tr>
         <td>Màn hình</td>
-        <td>@Html.DisplayFor(model => model.ManHinh)</td>
+        <td class="trong">@Html.DisplayFor(model => model.ManHinh)</td>
     </tr>
     <tr>
         <td>Camera</td>
-        <td>@Html.DisplayFor(model => model.Camera)</td>
+        <td class="trong">@Html.DisplayFor(model => model.Camera)</td>
     </tr>
     <tr>
         <td>GPU</td>
-        <td>@Html.DisplayFor(model => model.GPU)</td>
+        <td class="trong">@Html.DisplayFor(model => model.GPU)</td>
     </tr>
     <tr>
         <td>CPU</td>
-        <td>@Html.DisplayFor(model => model.CPU)</td>
+        <td class="trong">@Html.DisplayFor(model => model.CPU)</td>
     </tr>
     <tr>
         <td>Hệ điều hành</td>
-        <td>@Html.DisplayFor(model => model.HDH)</td>
+        <td class="trong">@Html.DisplayFor(model => model.HDH)</td>
     </tr>
     <tr>
         <td>Bộ nhớ trong</td>
-        <td>@Html.DisplayFor(model => model.BoNhoTrong)</td>
+        <td class="trong">@Html.DisplayFor(model => model.BoNhoTrong)</td>
     </tr>
     <tr>
         <td>Ram</td>
-        <td>@Html.DisplayFor(model => model.Ram)</td>
+        <td class="trong">@Html.DisplayFor(model => model.Ram)</td>
     </tr>
     <tr>
         <td>Pin</td>
-        <td>@Html.DisplayFor(model => model.Pin)</td>
+        <td class="trong">@Html.DisplayFor(model => model.Pin)</td>
     </tr>
     <tr>
         <td>Thông tin thêm</td>
-        <td>@Html.DisplayFor(model => model.MoTa)</td>
+        <td class="trong">@Html.DisplayFor(model => model.MoTa)</td>
     </tr>
     <tr>
         <td>Số lượng trong kho</td>
-        <td>@Html.DisplayFor(model => model.SoLuong)</td>
+        <td class="trong">@Html.DisplayFor(model => model.SoLuong)</td>
     </tr>
     <tr>
         <td>Đơn giá bán</td>
-        <td>@Html.DisplayFor(model => model.DonGia)</td>
+        <td class="trong">@Html.DisplayFor(model => model.DonGia)</td>
     </tr>
     <tr>
         <td>Thông tin khuyến mãi</td>
-        <td>@Html.DisplayFor(model => model.KhuyenMai)</td>
+        <td class="trong">@Html.DisplayFor(model => model.KhuyenMai)</td>
     </tr>
 </table>
+</div>
+</div>
