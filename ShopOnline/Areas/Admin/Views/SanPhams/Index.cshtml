@@ -53,9 +53,6 @@
 grid.Column("TenSP","Tên sản phẩm"), //the model fields to display
 grid.Column("DonGia","Giá",format:@<text> @item.DonGia.ToString("#,##0")</text>),
 grid.Column("HinhAnh","Hình Ảnh"),
-//grid.Column(format: (item) => Html.ActionLink("Cập nhật", "Edit", "SanPhams",new { id = item.MaSP },"s")),
-//grid.Column(format: (item) => Html.ActionLink("Xem chi tiết", "Details","SanPhams", new { id = item.MaSP },"s")),
-//grid.Column(format: (item) => Html.ActionLink("Xóa", "Delete","SanPhams", new { id = item.MaSP },"s")),
 grid.Column("Chức năng", format:
 @<text>
     <a href="@Url.Action("Edit",new { id = item.MaSP})"><abbr title="Cập nhật dữ liệu"><i class="fas fa-edit"></i></abbr></a>

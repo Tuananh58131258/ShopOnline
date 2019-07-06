@@ -138,12 +138,6 @@
     </Content>
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
-    <Content Include="Content\admincss\grid.css" />
-    <Content Include="Content\admincss\HoaDon.css" />
-    <Content Include="Content\admincss\layout.css" />
-    <Content Include="Content\admincss\Sanpham.css" />
-    <Content Include="Content\admincss\Submenu.css" />
-    <Content Include="Content\adminjs\submenu.js" />
     <Content Include="Content\css\all.css" />
     <Content Include="Content\css\bootstrap-grid.css" />
     <Content Include="Content\css\bootstrap-grid.min.css" />
@@ -519,6 +513,8 @@
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="Content\admincss\" />
+    <Folder Include="Content\adminjs\" />
     <Folder Include="Views\CommonConstant\" />
   </ItemGroup>
   <PropertyGroup>
