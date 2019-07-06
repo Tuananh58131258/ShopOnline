@@ -22,8 +22,75 @@ namespace ShopOnline.Controllers
             int pageSize = 6;
             int pageNumber = (page ?? 1);
             
-            return PartialView("DanhSachDT",model.ToPagedList(pageNumber,pageSize));
+            return PartialView(model.ToPagedList(pageNumber,pageSize));
         }
+        public PartialViewResult DanhSachLaptop(int? page)
+        {
+            if (page == null) page = 1;
+            var model = db.SanPham.Where(x => x.MaSP.StartsWith("LT")).OrderBy(x => x.MaSP);
+            int pageSize = 6;
+            int pageNumber = (page ?? 1);
+
+            return PartialView("DanhSachLaptop", model.ToPagedList(pageNumber, pageSize));
+        }
+        public PartialViewResult DanhSachTablet(int? page)
+        {
+            if (page == null) page = 1;
+            var model = db.SanPham.Where(x => x.MaSP.StartsWith("TB")).OrderBy(x => x.MaSP);
+            int pageSize = 6;
+            int pageNumber = (page ?? 1);
+
+            return PartialView("DanhSachTablet", model.ToPagedList(pageNumber, pageSize));
+        }
+        public ActionResult ListAllDT()
+        {
+            var model = db.SanPham.Where(x => x.MaSP.StartsWith("DT")).OrderBy(x=>x.MaSP);
+            return View(model);
+        }
+        public ActionResult ListAllTB()
+        {
+            var model = db.SanPham.Where(x => x.MaSP.StartsWith("TB")).OrderBy(x => x.MaSP);
+            return View(model);
+        }
+        public ActionResult ListAllLT()
+        {
+            var model = db.SanPham.Where(x => x.MaSP.StartsWith("LT")).OrderBy(x => x.MaSP);
+            return View(model);
+        }
+        public ActionResult KhuyenMai()
+        {
+            var model = db.SanPham.Where(x => x.KhuyenMai > 0).OrderByDescending(x => x.KhuyenMai);
+            return View(model);
+        }
+        public PartialViewResult ListKhuyenMai(int? page)
+        {
+            if (page == null) page = 1;
+            var model = db.SanPham.Where(x => x.KhuyenMai > 0).OrderByDescending(x => x.KhuyenMai);
+            int pageSize = 8;
+            int pageNumber = (page ?? 1);
+
+            return PartialView("ListKhuyenMai", model.ToPagedList(pageNumber, pageSize));
+        }
+        [HttpPost]
+        public ActionResult ListAllDT(string tensp="",string nsx="",string giamin="",string giamax ="",string hdh="",string cpu="")
+        {
+            ViewBag.MaNSX = new SelectList(db.NhaSanXuat, "MaNSX", "TenNSX");
+            if (giamin == "") giamin = "0";
+            if (giamax == "") giamax = Int32.MaxValue.ToString();
+            decimal _giamin = decimal.Parse(giamin);
+            decimal _giamax = decimal.Parse(giamax);
+            var model = db.SanPham.Where(x => x.MaSP.StartsWith("DT") 
+            //&& x.TenSP.Contains(tensp) 
+           // && x.NhaSanXuat.TenNSX == nsx 
+            && x.DonGia >= _giamin
+            && x.DonGia <=_giamax
+            && x.HDH.Contains(hdh)
+            && x.CPU.StartsWith(cpu)
+            ).Where(x=>x.NhaSanXuat.TenNSX==nsx).OrderBy(x => x.MaSP);
+            
+            return View(model);
+        }
+        
         // GET: SanPhamKHs
         public ActionResult Index()
         {
@@ -37,7 +104,7 @@ namespace ShopOnline.Controllers
         {
             if (id == null)
             {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+                id = "DT001";
             }
             SanPhamKH sanPhamKH = db.SanPham.Find(id);
             if (sanPhamKH == null)
@@ -46,7 +113,13 @@ namespace ShopOnline.Controllers
             }
             return View(sanPhamKH);
         }
-
+        [HttpPost]
+        public ActionResult Details( string id, int quantity =1)
+        {
+           
+            return RedirectToAction("AddItem","Cart",new {quantity = quantity, MaSP = id });
+        }
+        
         // GET: SanPhamKHs/Create
         public ActionResult Create()
         {

@@ -1,21 +1,23 @@
 ﻿
+
 @model PagedList.IPagedList<ShopOnline.Models.SanPhamKH>
 @using PagedList.Mvc;
 
 <div class="list-phone row">
     @foreach (var item in Model)
     {
-        <div class="col-md-4 item-holder">
+        <div class="col-md-3 item-holder">
             <div class="image-holder  text-center">
                 <a href="@Url.Action("Details",new { id= item.MaSP})"><img src="~/images/SanPham/@item.HinhAnh" /></a>
                 <div class="image-text">
                     <a href="@Url.Action("Details",new { id= item.MaSP})">
-                        <h6>@item.TenSP</h6></a>
+                        <h6>@item.TenSP</h6>
+                    </a>
 
-                        <div class="price">
-                            <p>@item.DonGia</p>
-                        </div>
-</div>
+                    <div class="price">
+                        <p>@item.DonGia</p>
+                    </div>
+                </div>
                 <div class="add-cart">
                     <h3><a href="@Url.Action("AddItem","Cart",new { quantity=1,MaSP=@item.MaSP})"><abbr title="Thêm vào giỏ"><i class="fas fa-cart-plus"></i></abbr></a></h3>
                 </div>
@@ -29,7 +31,7 @@
     <div class="container-fluid d-flex justify-content-center">
         <div id="myPager">
             Trang @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber)/ @Model.PageCount
-            @Html.PagedListPager(Model, page => Url.Action("DanhSach_DT", new { page }), PagedListRenderOptions.EnableUnobtrusiveAjaxReplacing(new AjaxOptions { UpdateTargetId = "list-phone-area", HttpMethod = "GET", InsertionMode = InsertionMode.Replace, LoadingElementId = "list-phone-area" }))
+            @Html.PagedListPager(Model, page => Url.Action("ListKhuyenMai", new { page }), PagedListRenderOptions.EnableUnobtrusiveAjaxReplacing(new AjaxOptions { UpdateTargetId = "list-phone-area", HttpMethod = "GET", InsertionMode = InsertionMode.Replace, LoadingElementId = "list-phone-area" }))
         </div>
     </div>
     <script>

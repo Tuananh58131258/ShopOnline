@@ -6,6 +6,11 @@ ul{
 li{display: inline-block;
 
 }
+a{text-decoration:none;}
+h2{
+    text-transform:uppercase;
+   
+}
 li a:hover{
         text-decoration:none;
         color:inherit;
@@ -79,6 +84,7 @@ span{
 
 header{
 	background-color: #09314f;
+    margin-bottom: 20px;
 }
 .fa-blogger{
 	margin:0 auto;
@@ -355,7 +361,7 @@ footer p{
 
 /*--------------DANH SACH SP--------*/
 /*--------------search section--------*/
-#dssanpham #search-area{
+ #search-area{
     position: relative;
     height: 50px;
     margin-bottom: 30px;
@@ -363,14 +369,14 @@ footer p{
     padding:0;
 }
 
-#dssanpham #search-area input{
+ #search-area input{
     color: #222222;
     width: 100%;
     padding: 10px;
     font-family: 'Open Sans', sans-serif;
 
 }
-#dssanpham #btn-search{
+#btn-search{
     position: absolute;
     width: 40px;
     height: 40px;
@@ -382,7 +388,9 @@ footer p{
    border:none;
 }
 
+
 /*--------------categories section--------*/
+
 .categories-menu{
         position: relative;
     margin-bottom: 48px;
@@ -429,7 +437,7 @@ footer p{
     position:relative;
     border: 1px solid #e5e5e5;
     margin-bottom:30px;
-    
+    padding:10px;
 }
 .list-phone .image-text{
         
@@ -457,12 +465,20 @@ footer p{
     background-color: #5dca7d;
     font-weight:bold;
 }
+.area-title{
+    margin-bottom:50px;
+    border-bottom:1px solid #e5e5e5;
+}
 #list-phone-area{
     position: relative;
     padding-bottom:100px;
     margin-bottom: 48px;
     border: 1px solid #e5e5e5;
     box-shadow: 0 0 20px #f1f1f1;
+    padding-top:50px;
+}
+.image-holder h6{
+    height:57px;
 }
 #myPager{
     position:absolute;
@@ -477,11 +493,7 @@ footer p{
     border-right:none;
 }
 #myPager li{
-     font-size: 15px;
-    line-height: 20px;
-    font-weight: 400;
-    color: #222222;
-    padding: 15px 30px;
+    
     border-right: 1px solid black;
 }
 #myPager li:hover{
@@ -493,4 +505,148 @@ footer p{
 }
 #myPager li a:hover{
     color:#ffffff;
+}
+
+/*-------------ds laptop------*/
+#list-laptop-area{
+    position: relative;
+    padding-bottom:100px;
+    margin-bottom: 48px;
+    border: 1px solid #e5e5e5;
+    box-shadow: 0 0 20px #f1f1f1;
+    padding-top:50px;
+}
+#myPager2{
+    position:absolute;
+    bottom: 5px;
+    
+    left: auto;
+}
+#myPager2 li:first-child{
+    border-left: 1px solid black;
+}
+#myPager2 li:last-child{
+    border-right:none;
+}
+#myPager2 li{
+  
+    border-right: 1px solid black;
+}
+#myPager2 li:hover{
+    background: rgba(93, 202, 125, 0.9);
+}
+#myPager2 li a{
+    color:black;
+    
+}
+#myPager2 li a:hover{
+    color:#ffffff;
+}
+
+/*-------------ds tablet------*/
+#list-tablet-area{
+    position: relative;
+    padding-bottom:100px;
+    margin-bottom: 48px;
+    border: 1px solid #e5e5e5;
+    box-shadow: 0 0 20px #f1f1f1;
+    padding-top:50px;
+}
+#myPager3{
+    position:absolute;
+    bottom: 5px;
+    
+    left: auto;
+}
+#myPager3 li:first-child{
+    border-left: 1px solid black;
+}
+#myPager3 li:last-child{
+    border-right:none;
+}
+#myPager3 li{
+  
+    border-right: 1px solid black;
+}
+#myPager3 li:hover{
+    background: rgba(93, 202, 125, 0.9);
+}
+#myPager3 li a{
+    color:black;
+    
+}
+#myPager3 li a:hover{
+    color:#ffffff;
+}
+/*--------list all dt--------*/
+#list-phone-area2{
+    position: relative;
+    padding-bottom:100px;
+    margin-bottom: 48px;
+    border: 1px solid #e5e5e5;
+    box-shadow: 0 0 20px #f1f1f1;
+    padding-top:50px;
+}
+#myPager4{
+    position:absolute;
+    bottom: 5px;
+    
+    left: auto;
+}
+#myPager4 li:first-child{
+    border-left: 1px solid black;
+}
+#myPager4 li:last-child{
+    border-right:none;
+}
+#myPager4 li{
+  
+    border-right: 1px solid black;
+}
+#myPager4 li:hover{
+    background: rgba(93, 202, 125, 0.9);
+}
+#myPager4 li a{
+    color:black;
+    
+}
+#myPager4 li a:hover{
+    color:#ffffff;
+}
+
+#timkiemnc{
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+#timkiemnc ul li{display: block;}
+#timkiemnc li:hover{font-weight:bold;}
+.image-text li{
+    display:block;
+}
+.form-group{
+        display: inline-block;
+    margin-bottom: 32px;
+    position:relative;
+
+}
+.form-group input{
+        width: 65px;
+    height: 50px;
+    margin-right: 17px;
+    padding-right: 10px;
+    border: 1px solid #e5e5e5;
+    padding-left:17px;
+}
+.btn_add{background:#5dca7d;
+         font-size: 14px;
+    font-weight: 700;
+    line-height: 26px;
+    padding: 12px 30px;
+    font-family: 'Open Sans', sans-serif;
+}
+#giohang{position:relative;
+         margin-bottom:50px;
+}
+figure img{
+   width:100%;
 }
