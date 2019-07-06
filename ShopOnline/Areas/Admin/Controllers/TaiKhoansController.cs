@@ -11,7 +11,6 @@ using System.Web.Security;
 
 namespace ShopOnline.Areas.Admin.Controllers
 {
-    [Authorize]
     public class TaiKhoansController : Controller
     {
         private DoAnWebEntities db = new DoAnWebEntities();
