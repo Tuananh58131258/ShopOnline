@@ -20,30 +20,32 @@
     <section class="header-top">
         <div class="container">
             <div class="row">
-                <div class="main-logo">
+                <div class="main-logo col-md-3 col-sm-12">
                     <figure>
                         <a href="fixera.html"><img src="~/images/logo.png" alt=""></a>
                     </figure>
                 </div>
 
-                <ul class="header-info">
-                    <li class="item">
-                        <i class="far fa-clock"></i>
-                        <h6>Opening Time</h6>
-                        <span>Allday 9.00 - 18.00</span>
-                    </li>
-                    <li class="item">
-                        <i class="far fa-envelope"></i>
-                        <h6>Email Us</h6>
-                        <a href="http://nasim.hostlin.com/Fixera/index.html#"><span>info@example.com</span></a>
-                    </li>
-                    <li class="item">
-                        <i class="fas fa-phone fa-rotate-90"></i>
-                        <h6>Call Us Now</h6>
-                        <span class="phone-number">+123-456-789</span>
-                    </li>
+                
+                    <div class="item  col-md-3 row  col-sm-12">
+                        <div class="col-md-2 col-sm-3 text-center"><i class="far fa-clock fa-2x"></i></div>
+                        <div class="col-md-10 col-sm-9">
+                            <h6>Opening Time</h6>
+                            <span>Allday 9.00 - 18.00</span>
+                        </div>
+                        </div>
+                    <div class="item col-md-3 row  col-sm-12">
+                        <div class="col-md-2 col-sm-3 text-center">
+                            <i class="far fa-envelope fa-2x"></i>
+                        </div>
+                        <div class="col-md-10 col-sm-9">
+                            <h6>Email Us</h6>
+                            <a href="http://nasim.hostlin.com/Fixera/index.html#"><span>info@example.com</span></a>
+                        </div>
+                    </div>
+                    @{Html.RenderAction("HeaderCart", "HomePage"); }
 
-                </ul>
+
             </div>
         </div>
     </section>
@@ -68,12 +70,12 @@
 
                             </ul>
                         </li>
-                        <li class="nav-item dropdown"><a href="#" class="nav-link text-white">Phone <i class="fas fa-mobile-alt"></i></a></li>
-                        <li class="nav-item dropdown"><a href="#" class="nav-link text-white">Tablet <i class="fas fa-tablet-alt"></i></a></li>
-                        <li class="nav-item dropdown"><a href="#" class="nav-link text-white">Laptop <i class="fas fa-laptop"></i></a></li>
-                        <li class="nav-item dropdown"><a href="#" class="nav-link text-white">Khuyến mãi hot <i class="fas fa-fire"></i></a></li>
+                        <li class="nav-item dropdown"><a href="@Url.Action("ListAllDT","SanPhamKHs",null)" class="nav-link text-white">Phone <i class="fas fa-mobile-alt"></i></a></li>
+                        <li class="nav-item dropdown"><a href="@Url.Action("ListAllTB","SanPhamKHs",null)" class="nav-link text-white">Tablet <i class="fas fa-tablet-alt"></i></a></li>
+                        <li class="nav-item dropdown"><a href="@Url.Action("ListAllLT","SanPhamKHs",null)" class="nav-link text-white">Laptop <i class="fas fa-laptop"></i></a></li>
+                        <li class="nav-item dropdown"><a href="@Url.Action("KhuyenMai","SanPhamKHs",null)" class="nav-link text-white">Khuyến mãi hot <i class="fas fa-fire"></i></a></li>
 
-                        <li class="nav-item"><a href="write_post.html" class="nav-link text-white">Liên hệ </a></li>
+                        <li class="nav-item"><a href="#" class="nav-link text-white">Liên hệ </a></li>
                     </ul>
 
 
@@ -100,5 +102,6 @@
             </div>
         </div>
     </footer>
+    @RenderSection("jsFooter", required: false)
 </body>
 </html>

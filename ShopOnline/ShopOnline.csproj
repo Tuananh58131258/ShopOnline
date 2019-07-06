@@ -156,6 +156,7 @@
     <Content Include="Content\js\bootstrap.bundle.min.js" />
     <Content Include="Content\js\bootstrap.js" />
     <Content Include="Content\js\bootstrap.min.js" />
+    <Content Include="Content\js\Controller\CartController.js" />
     <Content Include="Content\js\jquery.js" />
     <Content Include="Content\js\jquery.min.js" />
     <Content Include="Content\js\phoneshop.js" />
@@ -400,11 +401,14 @@
     <Compile Include="Areas\Admin\Models\TimKiemSP_Result.cs">
       <DependentUpon>ModelAdmin.tt</DependentUpon>
     </Compile>
+    <Compile Include="Common\CommonConstantController.cs" />
+    <Compile Include="Controllers\CartController.cs" />
     <Compile Include="Controllers\HomePageController.cs" />
     <Compile Include="Controllers\SanPhamKHsController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\CartItem.cs" />
     <Compile Include="Models\CTHoaDonKH.cs">
       <DependentUpon>PhoneShopModel.tt</DependentUpon>
     </Compile>
@@ -490,6 +494,14 @@
     <Content Include="Scripts\popper-utils.js.map" />
     <Content Include="Views\SanPhamKHs\DanhSachLaptop.cshtml" />
     <Content Include="Views\SanPhamKHs\DanhSachTablet.cshtml" />
+    <Content Include="Views\SanPhamKHs\ListAllDT.cshtml" />
+    <Content Include="Views\Cart\GioHang.cshtml" />
+    <Content Include="Views\HomePage\HeaderCart.cshtml" />
+    <Content Include="Views\SanPhamKHs\ListAllTB.cshtml" />
+    <Content Include="Views\SanPhamKHs\ListAllLT.cshtml" />
+    <Content Include="Views\SanPhamKHs\KhuyenMai.cshtml" />
+    <Content Include="Views\SanPhamKHs\ListKhuyenMai.cshtml" />
+    <Content Include="Views\Cart\payment.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -503,6 +515,9 @@
   <ItemGroup>
     <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Views\CommonConstant\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

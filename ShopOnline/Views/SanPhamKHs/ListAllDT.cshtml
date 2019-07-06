@@ -1,0 +1,108 @@
+﻿
+@{
+    ViewBag.Title = "ListAllDT";
+    Layout = "~/Views/Shared/LayoutPage.cshtml";
+}
+
+
+@model IQueryable<ShopOnline.Models.SanPhamKH>
+@using PagedList.Mvc;
+
+<div class="container">
+    <div class="row">
+    <div class="col-md-3">
+        <div class="container">
+            <div id="search-area">
+                @using (Html.BeginForm("ListAllDT", "SanPhamKHs", null, FormMethod.Post))
+                {
+                    <input type="text" placeholder="Search..." name="tensp">
+                    <button type="submit" id="btn-search">
+                        <i class="fas fa-search"></i>
+                    </button>
+                }
+
+            </div>
+
+            
+            <div id="timkiemnc">
+                @using (Html.BeginForm("ListAllDT", "SanPhamKHs", FormMethod.Post))
+                {
+                    <h4>Hãng sản xuất</h4>
+                    <ul>
+                        <li>
+                        @Html.RadioButton("nsx", "SamSung")
+                        <text>&nbsp;Samsung</text>
+                            </li>
+                        <li>
+                            @Html.RadioButton("nsx", "Apple")
+                            <text>&nbsp;apple</text>
+                        </li>
+                        <li>
+                            @Html.RadioButton("nsx", "Microsoft")
+                            <text>&nbsp;microsoft</text>
+                        </li>
+                        <li>
+                            @Html.RadioButton("nsx", "Oppo")
+                            <text>&nbsp;oppo</text>
+                        </li>
+                        <li>
+                            @Html.RadioButton("nsx", "Asus")
+                            <text>&nbsp;Asus</text>
+                        </li>
+                    </ul>
+
+                    <h4>Giá</h4>
+
+                        <div class="row" style="margin:15px 15px">
+                            @Html.TextBox("giamin", null, new { @class = "col-md-5" })<span>&nbsp; - &nbsp; </span> @Html.TextBox("giamax", null, new { @class = "col-md-offset-2 col-md-5" }) 
+                        </div>
+                        <h4>Hệ Điều Hành</h4>
+
+                        <ul>
+                            <li>
+                                @Html.RadioButton("hdh", "Android")<text> Android</text>
+                            </li>
+                            <li>
+                                @Html.RadioButton("hdh", "iOS")
+                                <text>iOS</text>
+                            </li>
+                        </ul>
+                        <h4>CPU</h4>
+
+                        <ul>
+                            <li>
+                                @Html.RadioButton("cpu", "Apple")<text> Apple</text>
+                            </li>
+                            <li>
+                                @Html.RadioButton("cpu", "Exynos")
+                                <text>Exynos</text>
+                            </li>
+                            <li>
+                                @Html.RadioButton("cpu", "Qualcomm")
+                                <text>Qualcomm</text>
+                            </li>
+                            <li>
+                                @Html.RadioButton("cpu", "Snapdragon")
+                                <text>Snapdragon</text>
+                            </li>
+                            <li>
+                                @Html.RadioButton("cpu", "Media")
+                                <text>MediaTek</text>
+                            </li>
+                        </ul>
+                        <input type="submit" name="submit" value="Search" role="button" class="btn btn-secondary"  />
+                        <input type="button" name="Nhapmoi" value="Nhập mới" role="button" class="btn btn-secondary" onclick="location.href='@Url.Action("ListAllDT", "SanPhamKHs/ListAllDT")'" />
+                }
+            </div>
+        </div>
+    </div>
+        <div class="col-md-9">
+            <div id="list-phone-area" class="text-center">
+                <div class="area-title text-left container-fluid"><h4><i class="fas fa-mobile-alt"></i>&nbsp;Điện thoại</h4></div>
+                @{Html.RenderAction("DanhSach_DT", "SanPhamKHs", new { page = 1});}
+
+
+            </div>
+        </div>
+    </div>
+</div>

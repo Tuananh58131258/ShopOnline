@@ -1,20 +1,18 @@
 ﻿
 
-
 @model PagedList.IPagedList<ShopOnline.Models.SanPhamKH>
 @using PagedList.Mvc;
 
-@{
-
-}
 <div class="list-phone row">
     @foreach (var item in Model)
     {
-        <div class="col-md-4 item-holder">
+        <div class="col-md-3 item-holder">
             <div class="image-holder  text-center">
-                <a href="#"><img src="~/images/SanPham/@item.HinhAnh" /></a>
+                <a href="@Url.Action("Details",new { id= item.MaSP})"><img src="~/images/SanPham/@item.HinhAnh" /></a>
                 <div class="image-text">
-                    <h6>@item.TenSP</h6>
+                    <a href="@Url.Action("Details",new { id= item.MaSP})">
+                        <h6>@item.TenSP</h6>
+                    </a>
 
                     <div class="price">
                         <p>@item.DonGia</p>
@@ -31,21 +29,22 @@
     <br />
     <br />
     <div class="container-fluid d-flex justify-content-center">
-        <div id="myPager3">
+        <div id="myPager">
             Trang @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber)/ @Model.PageCount
-            @Html.PagedListPager(Model, page => Url.Action("DanhSachTablet", new { page }), PagedListRenderOptions.EnableUnobtrusiveAjaxReplacing(new AjaxOptions { UpdateTargetId = "list-phone-area", HttpMethod = "GET", InsertionMode = InsertionMode.Replace, LoadingElementId = "list-phone-area" }))
+            @Html.PagedListPager(Model, page => Url.Action("ListKhuyenMai", new { page }), PagedListRenderOptions.EnableUnobtrusiveAjaxReplacing(new AjaxOptions { UpdateTargetId = "list-phone-area", HttpMethod = "GET", InsertionMode = InsertionMode.Replace, LoadingElementId = "list-phone-area" }))
         </div>
     </div>
     <script>
         $(function () {
-            $('#myPager3 li a').addClass("nav-link");
-    $('#myPager3').on('click', 'a', function () {
+            $('#myPager li a').addClass("nav-link");
+
+    $('#myPager').on('click', 'a', function () {
         $.ajax({
             url: this.href,
             type: 'GET',
             cache: false,
             success: function (result) {
-                $('#list-tablet-area').html(result);
+                $('#list-phone-area').html(result);
             }
         });
         return false;
