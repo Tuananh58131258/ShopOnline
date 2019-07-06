@@ -358,7 +358,6 @@
     <Compile Include="Areas\Admin\Controllers\NhaSanXuatsController.cs" />
     <Compile Include="Areas\Admin\Controllers\SanPhamsController.cs" />
     <Compile Include="Areas\Admin\Controllers\TaiKhoansController.cs" />
-    <Compile Include="Areas\Admin\Controllers\ThongKeController.cs" />
     <Compile Include="Areas\Admin\Models\CTHoaDon.cs">
       <DependentUpon>ModelAdmin.tt</DependentUpon>
     </Compile>
@@ -399,6 +398,9 @@
       <DependentUpon>ModelAdmin.tt</DependentUpon>
     </Compile>
     <Compile Include="Areas\Admin\Models\TimKiemSP_Result.cs">
+      <DependentUpon>ModelAdmin.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\Admin\Models\USP_Login_Result.cs">
       <DependentUpon>ModelAdmin.tt</DependentUpon>
     </Compile>
     <Compile Include="Common\CommonConstantController.cs" />
