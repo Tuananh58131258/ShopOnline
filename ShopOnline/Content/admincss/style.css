@@ -50,7 +50,7 @@ body {
 ----------------------------------------------------- */
 .wrapper {
     display: flex;
-    align-items: stretch;
+    /*align-items: stretch;*/
 }
 
 #sidebar {
@@ -151,6 +151,10 @@ body {
     min-width:calc(100%-250px);
     min-height: 100vh;
     transition: all 0.3s;
+    
+}
+#content .box{
+    float:left;
 }
 
 /* ---------------------------------------------------
@@ -167,3 +171,4 @@ body {
         display: none;
     }
 }
+

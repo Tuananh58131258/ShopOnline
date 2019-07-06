@@ -136,6 +136,7 @@
       <DependentUpon>ModelAdmin.edmx</DependentUpon>
       <LastGenOutput>ModelAdmin.cs</LastGenOutput>
     </Content>
+    <Content Include="Content\admincss\CTSanPham.css" />
     <Content Include="Content\admincss\style.css" />
     <Content Include="Content\bootstrap-1.1.0.css" />
     <Content Include="Content\bootstrap-1.1.0.min.css" />
